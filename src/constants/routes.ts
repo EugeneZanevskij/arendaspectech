@@ -6,5 +6,5 @@ export const ROUTES = {
   CONTACT: "/contact",
   PROFILE: "/profile",
   LOGIN: "/login",
-  NOTFOUND: "*",
+  NOTFOUND: "/*",
 };
