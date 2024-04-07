@@ -1,7 +1,5 @@
 function App() {
-  return (
-    <div>Сайт для дипломного проекта</div>
-  )
+  return <div>Сайт для дипломного проекта</div>;
 }
 
-export default App
+export default App;
