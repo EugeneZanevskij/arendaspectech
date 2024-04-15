@@ -10,6 +10,7 @@ import {
   NavLinksContainer,
   NavLogo,
   NavbarContainer,
+  ViberLink,
 } from "./styled";
 import { useLocation } from "react-router-dom";
 
@@ -41,6 +42,9 @@ export const Header = () => {
           </ContactLink>
           <ContactLink href="tel:+375296667939">
             +375 (29) 666-79-39
+          </ContactLink>
+          <ContactLink href="viber://chat?number=375292155521">
+            <ViberLink />
           </ContactLink>
         </ContactsContainer>
       </NavbarContainer>
