@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { ThemeProvider } from "styled-components";
 import { THEME } from "../constants/theme";
 import { Global } from "../styled";
+import { Footer } from "./Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route key={nav.name} path={nav.path} element={<nav.component />} />
           ))}
         </Routes>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
