@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NAV } from "../constants/nav";
-import { Navbar } from "./Navbar";
+import { Header } from "./Header";
 import { ThemeProvider } from "styled-components";
 import { THEME } from "../constants/theme";
 import { Global } from "../styled";
@@ -10,7 +10,7 @@ function App() {
     <ThemeProvider theme={THEME}>
       <BrowserRouter>
         <Global />
-        <Navbar />
+        <Header />
         <Routes>
           {NAV.map((nav) => (
             <Route key={nav.name} path={nav.path} element={<nav.component />} />
