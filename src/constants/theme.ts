@@ -1,0 +1,16 @@
+export const THEME = {
+  white: "#ffffff",
+  black: "#000000",
+  blackTextColor: "#333333",
+  orange: "#ff9400",
+  darkOrange: "#ff6e00",
+  lightOrange: "#e7aa69",
+  darkestOrange: "#763d00",
+  red: "#ff0000",
+  lightBlack: "#121212",
+  lightGray: "#d9d9d9",
+  suvaGray: "#898989",
+  darkGray: "#474747",
+  modalGray: "#393939",
+  cardGray: "#202025",
+};
