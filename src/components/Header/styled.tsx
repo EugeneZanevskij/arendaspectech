@@ -1,5 +1,6 @@
-import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Link, NavLink } from "react-router-dom";
 
 export const HeaderContainer = styled.header`
   background-color: ${({ theme }) => theme.orange};
@@ -22,7 +23,7 @@ export const NavLogo = styled(Link)`
   color: ${({ theme }) => theme.white};
 `;
 
-export const NavLinksContainer = styled.ul`
+export const NavLinksContainer = styled.ul<{ open: boolean }>`
   list-style: none;
   max-width: 40rem;
   width: 100%;
@@ -33,17 +34,18 @@ export const NavLinksContainer = styled.ul`
     position: fixed;
     top: 5rem;
     right: 0;
+    width: 50%;
+    display: ${(props) => (props.open ? "flex" : "none")};
     flex-direction: column;
     align-items: center;
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 50%;
   }
 `;
 
 export const NavItem = styled.li`
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 
   @media (max-width: 768px) {
@@ -71,5 +73,18 @@ export const NavLinkItem = styled(NavLink)`
     font-weight: bold;
     border: 1px solid ${({ theme }) => theme.black};
     border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1rem;
+  }
+`;
+
+export const BurgerMenu = styled(GiHamburgerMenu)`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
   }
 `;
