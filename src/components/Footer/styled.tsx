@@ -22,6 +22,17 @@ export const FooterContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   box-shadow: 0 1 15px 5px ${({ theme }) => theme.darkOrange};
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 0;
+  }
 `;
 
 export const FooterColumn = styled.div`
@@ -29,6 +40,25 @@ export const FooterColumn = styled.div`
   flex-direction: column;
   gap: 1rem;
   padding: 1rem 0 1rem;
+  word-wrap: break-word;
+
+  @media (max-width: 480px) {
+    padding: 0 0 0.5rem 0;
+  }
+`;
+
+export const FooterColumnTwo = styled.div`
+  grid-column: 3/5;
+
+  @media (max-width: 768px) {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  @media (max-width: 480px) {
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
 `;
 
 export const FooterColumnTitle = styled.h3`
@@ -39,6 +69,10 @@ export const FooterItems = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  @media (max-width: 480px) {
+    justify-content: space-between;
+  }
 `;
 
 export const FooterItem = styled.div`
@@ -51,6 +85,10 @@ export const FooterItemIcon = styled.div`
   color: ${({ theme }) => theme.white};
   font-size: 2rem;
   width: 2rem;
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
 `;
 
 export const FooterItemLink = styled.a`
@@ -90,6 +128,10 @@ export const FooterColumnNavLink = styled(NavLink)`
 
   &.active {
     color: ${({ theme }) => theme.white};
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 0.25rem 0;
   }
 `;
 

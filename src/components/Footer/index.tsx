@@ -13,9 +13,11 @@ import {
   FooterItemText,
   FooterItemLink,
   FooterItemIcon,
+  FooterColumnTwo,
 } from "./styled";
 import { FOOTER_DATA } from "../../constants/footer";
 import { NAV } from "../../constants/nav";
+import { MapComponent } from "../Map";
 
 const { logo, title, footerData, copyright } = FOOTER_DATA;
 
@@ -53,6 +55,9 @@ export const Footer = () => {
               ))}
             </FooterItems>
           </FooterColumn>
+          <FooterColumnTwo>
+            <MapComponent />
+          </FooterColumnTwo>
         </FooterContainer>
       </FooterWrapper>
       <Copyright>{copyright}</Copyright>
