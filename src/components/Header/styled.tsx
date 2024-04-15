@@ -23,7 +23,7 @@ export const NavLogo = styled(Link)`
   color: ${({ theme }) => theme.white};
 `;
 
-export const NavLinksContainer = styled.ul<{ open: boolean }>`
+export const NavLinksContainer = styled.ul<{ isOpen: boolean }>`
   list-style: none;
   max-width: 40rem;
   width: 100%;
@@ -35,9 +35,10 @@ export const NavLinksContainer = styled.ul<{ open: boolean }>`
     top: 5rem;
     right: 0;
     width: 50%;
-    display: ${(props) => (props.open ? "flex" : "none")};
+    display: ${(props) => (props.isOpen ? "flex" : "none")};
     flex-direction: column;
     align-items: center;
+    box-shadow: -5px 5px 15px 5px ${({ theme }) => theme.darkOrange};
   }
 `;
 
@@ -81,10 +82,30 @@ export const NavLinkItem = styled(NavLink)`
   }
 `;
 
-export const BurgerMenu = styled(GiHamburgerMenu)`
+export const BurgerMenu = styled(GiHamburgerMenu)<{ isOpen: boolean }>`
   display: none;
+  cursor: pointer;
+  color: ${(props) => props.isOpen && "white"};
 
   @media (max-width: 768px) {
     display: block;
+  }
+`;
+
+export const ContactsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+`;
+
+export const ContactLink = styled.a`
+  text-decoration: none;
+  color: ${({ theme }) => theme.blackTextColor};
+  font-weight: bold;
+  font-size: 1.25rem;
+
+  &:hover {
+    color: ${({ theme }) => theme.white};
   }
 `;
