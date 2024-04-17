@@ -1,5 +1,6 @@
 export const THEME = {
   white: "#ffffff",
+  whiteTextColor: "#fbfbfbb3",
   black: "#000000",
   blackTextColor: "#333333",
   orange: "#ff9400",
