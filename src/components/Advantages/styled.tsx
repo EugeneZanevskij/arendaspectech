@@ -19,28 +19,6 @@ export const AdvantagesWrapper = styled.div`
   margin: 0 auto;
 `;
 
-export const AdvantagesText = styled.div`
-  max-width: 37.5rem;
-  width: 100%;
-  margin: 0 auto 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-`;
-
-export const AdvantagesTitle = styled.h2`
-  color: ${({ theme }) => theme.white};
-  font-size: 2rem;
-`;
-
-export const AdvantagesSubtitle = styled.p`
-  color: ${({ theme }) => theme.whiteTextColor};
-  font-size: 1.25rem;
-`;
-
 export const AdvantagesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
