@@ -7,13 +7,18 @@ import {
 interface SectionHeadingProps {
   title: string;
   subtitle: string;
+  color?: boolean;
 }
 
-export const SectionHeading = ({ title, subtitle }: SectionHeadingProps) => {
+export const SectionHeading = ({
+  title,
+  subtitle,
+  color,
+}: SectionHeadingProps) => {
   return (
     <SectionHeadingText>
-      <SectionHeadingTitle>{title}</SectionHeadingTitle>
-      <SectionHeadingSubtitle>{subtitle}</SectionHeadingSubtitle>
+      <SectionHeadingTitle color={color}>{title}</SectionHeadingTitle>
+      <SectionHeadingSubtitle color={color}>{subtitle}</SectionHeadingSubtitle>
     </SectionHeadingText>
   );
 };
