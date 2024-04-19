@@ -1,11 +1,14 @@
 import { SectionHeading } from "../SectionHeading";
 import {
+  AboutDetailsContainer,
   AboutParagraph,
   AboutSectionStyle,
   AboutStrongParagraph,
   AboutText,
   AboutWrapper,
 } from "./styled";
+import { ABOUT_DATA } from "../../constants/about";
+import { AboutDetail } from "./AboutDetail";
 
 const sectionHeading = {
   title: "ИП Колонтай",
@@ -37,6 +40,15 @@ export const AboutSection = () => {
             строительных задач и подобрать подходящую технику.
           </AboutParagraph>
         </AboutText>
+        <AboutDetailsContainer>
+          {ABOUT_DATA.details.map((detail) => (
+            <AboutDetail
+              key={detail.id}
+              title={detail.title}
+              text={detail.text}
+            />
+          ))}
+        </AboutDetailsContainer>
       </AboutWrapper>
     </AboutSectionStyle>
   );

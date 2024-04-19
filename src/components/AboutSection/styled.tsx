@@ -21,7 +21,7 @@ export const AboutWrapper = styled.div`
 export const AboutText = styled.div`
   max-width: 50rem;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -38,8 +38,11 @@ export const AboutStrongParagraph = styled.p`
   font-weight: bold;
 `;
 
-export const AboutContainer = styled.div`
+export const AboutDetailsContainer = styled.div`
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   gap: 2rem;
 `;
