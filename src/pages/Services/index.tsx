@@ -1,3 +1,10 @@
+import { Outlet } from "react-router-dom";
+import { ServicesSection } from "../../components/ServicesSection";
+
 export const Services = () => {
-  return <div>Services</div>;
+  return (
+    <ServicesSection>
+      <Outlet />
+    </ServicesSection>
+  );
 };
