@@ -11,3 +11,24 @@ interface ILocation {
   latitude: string;
   longitude: string;
 }
+
+interface IServicesItemExpanded {
+  id: number;
+  data: {
+    title: string;
+    image: string;
+  };
+  relativePath: string;
+  absolutePath: string;
+  services?: IServicesItem[];
+}
+
+interface IServicesItem {
+  id: number;
+  data: {
+    title: string;
+    image: string;
+  };
+  relativePath: string;
+  absolutePath: string;
+}
