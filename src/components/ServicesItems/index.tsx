@@ -2,7 +2,7 @@ import { ServicesItem } from "./ServicesItem";
 import { ServicesContainer } from "./styled";
 
 interface ServicesItemsProps {
-  services: IServicesItem[];
+  services: IServicesItemExpanded[];
 }
 
 export const ServicesItems = ({ services }: ServicesItemsProps) => {
