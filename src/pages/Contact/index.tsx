@@ -1,3 +1,5 @@
+import { ContactSection } from "../../components/ContactSection";
+
 export const Contact = () => {
-  return <div>Contact</div>;
+  return <ContactSection />;
 };
