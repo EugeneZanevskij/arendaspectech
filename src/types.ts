@@ -34,3 +34,10 @@ interface IServicesItem {
   relativePath: string;
   absolutePath: string;
 }
+
+export interface ITestimonial {
+  id: number;
+  title: string;
+  text: string[];
+  image: string;
+}
