@@ -1,3 +1,5 @@
+import { IconType } from "react-icons";
+
 interface IMapboxMap {
   center: [number, number];
   style: string;
@@ -40,4 +42,12 @@ export interface ITestimonial {
   title: string;
   text: string[];
   image: string;
+}
+
+export interface IContactItem {
+  id: number;
+  icon: IconType;
+  title: string;
+  text: string;
+  href?: string;
 }
