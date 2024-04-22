@@ -1,8 +1,14 @@
 import { CONTACT_DATA } from "../../constants/contact";
+import { MapComponent } from "../Map";
 import { SectionContainer } from "../SectionContainer";
 import { SectionHeading } from "../SectionHeading";
 import { ContactTextItem } from "./ContactTextItem";
-import { ContactContainer, ContactText, ContactTextTitle } from "./styled";
+import {
+  ContactContainer,
+  ContactMap,
+  ContactText,
+  ContactTextTitle,
+} from "./styled";
 
 const sectionHeading = {
   title: "Контакты",
@@ -22,6 +28,9 @@ export const ContactSection = () => {
               <ContactTextItem key={contact.id} {...contact} />
             ))}
           </ContactText>
+          <ContactMap>
+            <MapComponent />
+          </ContactMap>
         </ContactContainer>
       </>
     </SectionContainer>
