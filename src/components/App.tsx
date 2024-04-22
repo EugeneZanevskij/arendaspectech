@@ -13,7 +13,7 @@ import { Profile } from "../pages/Profile";
 import { Services } from "../pages/Services";
 import { NotFound } from "../pages/NotFound";
 import { SERVICES } from "../constants/services";
-import { ServicePage } from "../pages/Services/ServicesPage";
+import { ServiceInfo } from "../components/ServiceInfo";
 import { ServicesItems } from "./ServicesItems";
 
 function App() {
@@ -39,13 +39,13 @@ function App() {
                     element={<ServicesItems services={service.services} />}
                   />
                 ) : (
-                  <Route index element={<ServicePage service={service} />} />
+                  <Route index element={<ServiceInfo service={service} />} />
                 )}
                 {service.services?.map((subService) => (
                   <Route
                     key={subService.id}
                     path={subService.relativePath}
-                    element={<ServicePage service={subService} />}
+                    element={<ServiceInfo service={subService} />}
                   />
                 ))}
               </Route>
