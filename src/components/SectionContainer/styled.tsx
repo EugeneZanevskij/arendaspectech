@@ -1,8 +1,21 @@
 import styled from "styled-components";
 
-export const SectionContainerStyled = styled.section<{ background?: string; color?: string}>`
-  background-color: ${(props) => props.background==="orange" ? ({ theme }) => theme.orange : props.background==="black" ? ({ theme }) => theme.black : ({ theme }) => theme.white};
-  color: ${(props) => props.color==="orange" ? ({ theme }) => theme.orange : props.color==="white" ? ({ theme }) => theme.white : ({ theme }) => theme.black};
+export const SectionContainerStyled = styled.section<{
+  background?: string;
+  color?: string;
+}>`
+  background-color: ${(props) =>
+    props.background === "orange"
+      ? ({ theme }) => theme.orange
+      : props.background === "black"
+        ? ({ theme }) => theme.black
+        : ({ theme }) => theme.white};
+  color: ${(props) =>
+    props.color === "orange"
+      ? ({ theme }) => theme.orange
+      : props.color === "white"
+        ? ({ theme }) => theme.white
+        : ({ theme }) => theme.black};
   padding: 5rem 2rem;
 
   @media (max-width: 768px) {

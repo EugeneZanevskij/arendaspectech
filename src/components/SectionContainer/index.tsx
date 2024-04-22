@@ -5,12 +5,14 @@ interface SectionProps {
   background?: string;
   children: JSX.Element;
 }
-export const SectionContainer = ( { color, background, children }: SectionProps) => {
+export const SectionContainer = ({
+  color,
+  background,
+  children,
+}: SectionProps) => {
   return (
     <SectionContainerStyled color={color} background={background}>
-      <SectionWrapper>
-        {children}
-      </SectionWrapper>
+      <SectionWrapper>{children}</SectionWrapper>
     </SectionContainerStyled>
-  )
-}
+  );
+};

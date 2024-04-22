@@ -1,8 +1,6 @@
 import { SectionHeading } from "../SectionHeading";
 import { WorkStagesItem } from "./WorkStagesItem";
-import {
-  WorkStagesContainer,
-} from "./styled";
+import { WorkStagesContainer } from "./styled";
 import { WORK_STAGES } from "../../constants/workStages";
 import { SectionContainer } from "../SectionContainer";
 
@@ -15,17 +13,17 @@ export const WorkStages = () => {
   return (
     <SectionContainer background={"orange"}>
       <>
-      <SectionHeading {...sectionHeading} />
-      <WorkStagesContainer>
-        {WORK_STAGES.map((stage) => (
-          <WorkStagesItem
-          key={stage.id}
-          number={stage.id}
-          title={stage.title}
-          description={stage.description}
-          />
-        ))}
-      </WorkStagesContainer>
+        <SectionHeading {...sectionHeading} />
+        <WorkStagesContainer>
+          {WORK_STAGES.map((stage) => (
+            <WorkStagesItem
+              key={stage.id}
+              number={stage.id}
+              title={stage.title}
+              description={stage.description}
+            />
+          ))}
+        </WorkStagesContainer>
       </>
     </SectionContainer>
   );
