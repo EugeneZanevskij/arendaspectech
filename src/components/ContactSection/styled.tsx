@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ContactContainer = styled.div`
   display: flex;
+  margin-bottom: 2rem;
   background-color: ${({ theme }) => theme.white};
 
   @media screen and (max-width: 768px) {
@@ -26,7 +27,7 @@ export const ContactText = styled.div`
   }
 `;
 
-export const ContactTextTitle = styled.h3`
+export const ContactTitle = styled.h3`
   font-size: 1.75rem;
 `;
 
@@ -41,4 +42,15 @@ export const ContactMap = styled.div`
     width: 100%;
     height: 20rem;
   }
+`;
+
+export const ContactBoldParagraph = styled.p`
+  color: ${({ theme }) => theme.blackTextColor};
+  font-weight: bold;
+  font-size: 1rem;
+`;
+
+export const ContactParagraph = styled.p`
+  color: ${({ theme }) => theme.blackTextColor};
+  font-size: 1rem;
 `;

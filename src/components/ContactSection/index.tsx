@@ -1,4 +1,4 @@
-import { CONTACT_DATA } from "../../constants/contact";
+import { CONTACT_DATA, CONTACT_DATA_TEXT } from "../../constants/contact";
 import { MapComponent } from "../Map";
 import { SectionContainer } from "../SectionContainer";
 import { SectionHeading } from "../SectionHeading";
@@ -6,8 +6,9 @@ import { ContactTextItem } from "./ContactTextItem";
 import {
   ContactContainer,
   ContactMap,
+  ContactParagraph,
   ContactText,
-  ContactTextTitle,
+  ContactTitle,
 } from "./styled";
 
 const sectionHeading = {
@@ -21,9 +22,7 @@ export const ContactSection = () => {
         <SectionHeading {...sectionHeading} />
         <ContactContainer>
           <ContactText>
-            <ContactTextTitle>
-              СВЯЖИТЕСЬ С НАМИ УДОБНЫМ СПОСОБОМ!
-            </ContactTextTitle>
+            <ContactTitle>СВЯЖИТЕСЬ С НАМИ УДОБНЫМ СПОСОБОМ!</ContactTitle>
             {CONTACT_DATA.map((contact) => (
               <ContactTextItem key={contact.id} {...contact} />
             ))}
@@ -31,6 +30,14 @@ export const ContactSection = () => {
           <ContactMap>
             <MapComponent />
           </ContactMap>
+        </ContactContainer>
+        <ContactContainer>
+          <ContactText>
+            <ContactTitle>Реквизиты</ContactTitle>
+            {CONTACT_DATA_TEXT.map((text, index) => (
+              <ContactParagraph key={index}>{text}</ContactParagraph>
+            ))}
+          </ContactText>
         </ContactContainer>
       </>
     </SectionContainer>
