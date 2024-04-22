@@ -2,10 +2,9 @@ import { SectionHeading } from "../SectionHeading";
 import { WorkStagesItem } from "./WorkStagesItem";
 import {
   WorkStagesContainer,
-  WorkStagesSection,
-  WorkStagesWrapper,
 } from "./styled";
 import { WORK_STAGES } from "../../constants/workStages";
+import { SectionContainer } from "../SectionContainer";
 
 const sectionHeading = {
   title: "Этапы работы",
@@ -14,20 +13,20 @@ const sectionHeading = {
 
 export const WorkStages = () => {
   return (
-    <WorkStagesSection>
-      <WorkStagesWrapper>
-        <SectionHeading {...sectionHeading} />
-        <WorkStagesContainer>
-          {WORK_STAGES.map((stage) => (
-            <WorkStagesItem
-              key={stage.id}
-              number={stage.id}
-              title={stage.title}
-              description={stage.description}
-            />
-          ))}
-        </WorkStagesContainer>
-      </WorkStagesWrapper>
-    </WorkStagesSection>
+    <SectionContainer background={"orange"}>
+      <>
+      <SectionHeading {...sectionHeading} />
+      <WorkStagesContainer>
+        {WORK_STAGES.map((stage) => (
+          <WorkStagesItem
+          key={stage.id}
+          number={stage.id}
+          title={stage.title}
+          description={stage.description}
+          />
+        ))}
+      </WorkStagesContainer>
+      </>
+    </SectionContainer>
   );
 };

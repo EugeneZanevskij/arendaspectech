@@ -1,5 +1,5 @@
+import { SectionContainer } from "../SectionContainer";
 import { SectionHeading } from "../SectionHeading";
-import { ServicesSectionStyle, ServicesWrapper } from "./styled";
 
 interface ServicesSectionProps {
   children: JSX.Element;
@@ -11,11 +11,11 @@ const sectionHeading = {
 };
 export const ServicesSection = ({ children }: ServicesSectionProps) => {
   return (
-    <ServicesSectionStyle>
-      <ServicesWrapper>
+    <SectionContainer>
+      <>
         <SectionHeading {...sectionHeading} color={true} />
         {children}
-      </ServicesWrapper>
-    </ServicesSectionStyle>
+      </>
+    </SectionContainer>
   );
 };
