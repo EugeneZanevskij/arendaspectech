@@ -39,7 +39,7 @@ export const TestimonialImage = styled.img`
   height: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  
+
   @media screen and (max-width: 768px) {
     max-width: 300px;
   }
