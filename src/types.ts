@@ -15,8 +15,9 @@ interface ILocation {
 interface IServicesItemExpanded {
   id: number;
   data: {
-    title: string;
     image: string;
+    title: string;
+    subtitle?: string;
   };
   relativePath: string;
   absolutePath: string;
@@ -26,8 +27,9 @@ interface IServicesItemExpanded {
 interface IServicesItem {
   id: number;
   data: {
-    title: string;
     image: string;
+    title: string;
+    subtitle?: string;
   };
   relativePath: string;
   absolutePath: string;

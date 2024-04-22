@@ -18,6 +18,7 @@ export const SERVICES: IServicesItemExpanded[] = [
     data: {
       title: "Перевозка техники",
       image: PerevozkaTekhniki,
+      subtitle: "Все виды перевозок",
     },
     relativePath: "perevozka-tekhniki",
     absolutePath: "/services/perevozka-tekhniki",
