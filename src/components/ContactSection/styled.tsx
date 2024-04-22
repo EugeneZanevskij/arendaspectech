@@ -42,6 +42,10 @@ export const ContactMap = styled.div`
     width: 100%;
     height: 20rem;
   }
+
+  @media screen and (max-width: 480px) {
+    height: 15rem;
+  }
 `;
 
 export const ContactBoldParagraph = styled.p`

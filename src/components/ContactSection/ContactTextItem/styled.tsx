@@ -16,6 +16,10 @@ export const ContactTextItemIcon = styled.div`
   border: 1px solid ${({ theme }) => theme.blackTextColor};
   color: ${({ theme }) => theme.orange};
   font-size: 1.5rem;
+
+  @media screen and (max-width: 480px){
+    display: none;
+  }
 `;
 
 export const ContactTextItemText = styled.div`

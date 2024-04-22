@@ -27,4 +27,10 @@ export const AboutDetailsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 `;

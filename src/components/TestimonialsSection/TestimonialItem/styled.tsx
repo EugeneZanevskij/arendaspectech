@@ -6,6 +6,10 @@ export const TestimonialContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
 `;
 
 export const TestimonialTextContainer = styled.div`
@@ -35,4 +39,8 @@ export const TestimonialImage = styled.img`
   height: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  
+  @media screen and (max-width: 768px) {
+    max-width: 300px;
+  }
 `;

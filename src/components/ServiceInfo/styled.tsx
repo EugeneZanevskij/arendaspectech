@@ -12,6 +12,11 @@ export const ServiceInfoTop = styled.div`
   gap: 1rem;
   background-color: ${({ theme }) => theme.lightOrange};
   border-radius: 2rem;
+  
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+  }
 `;
 
 export const ServiceInfoTopLeft = styled.div`
@@ -21,6 +26,10 @@ export const ServiceInfoTopLeft = styled.div`
   align-items: flex-start;
   gap: 1rem;
   padding: 1.5rem;
+  
+  @media screen and (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 export const ServiceInfoTitle = styled.h3`
@@ -48,4 +57,9 @@ export const ServiceInfoTopImage = styled.img`
   height: 100%;
   max-height: 400px;
   object-fit: cover;
+  
+  @media screen and (max-width: 768px) {
+    grid-column: 1/1;
+    grid-row: 2/2;
+  }
 `;
