@@ -1,20 +1,20 @@
 import { IconType } from "react-icons";
 
-interface IMapboxMap {
+export interface IMapboxMap {
   center: [number, number];
   style: string;
   zoom: number;
   attributionControl: boolean;
 }
 
-interface ILocation {
+export interface ILocation {
   title: string;
   address: string;
   latitude: string;
   longitude: string;
 }
 
-interface IServicesItemExpanded {
+export interface IServicesItemExpanded {
   id: number;
   data: {
     image: string;
@@ -26,7 +26,7 @@ interface IServicesItemExpanded {
   services?: IServicesItem[];
 }
 
-interface IServicesItem {
+export interface IServicesItem {
   id: number;
   data: {
     image: string;

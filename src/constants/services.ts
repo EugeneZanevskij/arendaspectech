@@ -2,6 +2,7 @@ import PerevozkaTekhniki from "../assets/perevozka_techniki.jpg";
 import SypuchieGruzy from "../assets/sypuchie_gruzy.jpg";
 import UborkaSneg from "../assets/uborka_snega.jpg";
 import ZemelnyeRaboty from "../assets/zemelnye_raboty.webp";
+import { IServicesItemExpanded } from "../types";
 
 export const SERVICES: IServicesItemExpanded[] = [
   {

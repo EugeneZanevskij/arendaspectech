@@ -1,3 +1,4 @@
+import { IServicesItem } from "../../../types";
 import {
   ServicesItemImg,
   ServicesItemStyle,

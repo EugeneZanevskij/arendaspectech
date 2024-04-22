@@ -1,3 +1,5 @@
+import { ILocation, IMapboxMap } from "../types";
+
 export const INITIAL_MAP: IMapboxMap = {
   center: [23.755149424805474, 53.63433166327404],
   style: "mapbox://styles/mapbox/streets-v11",

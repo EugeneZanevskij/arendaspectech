@@ -1,3 +1,4 @@
+import { IServicesItemExpanded } from "../../types";
 import {
   ServiceInfoButton,
   ServiceInfoContainer,

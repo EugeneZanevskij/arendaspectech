@@ -1,3 +1,4 @@
+import { IServicesItemExpanded } from "../../types";
 import { ServicesItem } from "./ServicesItem";
 import { ServicesContainer } from "./styled";
 
