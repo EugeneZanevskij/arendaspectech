@@ -37,6 +37,15 @@ export interface IServicesItem {
   absolutePath: string;
 }
 
+export interface IEquipmentItem {
+  id: number;
+  image?: string;
+  title: string;
+  subtitle: string;
+  relativePath: string;
+  absolutePath: string;
+}
+
 export interface ITestimonial {
   id: number;
   title: string;
