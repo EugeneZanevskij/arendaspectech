@@ -15,6 +15,9 @@ import { NotFound } from "../pages/NotFound";
 import { SERVICES } from "../constants/services";
 import { ServiceInfo } from "../components/ServiceInfo";
 import { ServicesItems } from "./ServicesItems";
+import { EquipmentsItems } from "./EquipmentItems";
+import { EQUIPMENT } from "../constants/equipment";
+import { EquipmentInfo } from "./EquipmentInfo";
 
 function App() {
   return (
@@ -25,7 +28,16 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/equipment" element={<Equipment />} />
+          <Route path="/equipment" element={<Equipment />}>
+            <Route index element={<EquipmentsItems equipments={EQUIPMENT} />} />
+            {EQUIPMENT.map((equipment) => (
+              <Route
+                key={equipment.id}
+                path={equipment.relativePath}
+                element={<EquipmentInfo equipment={equipment} />}
+              />
+            ))}
+          </Route>
           <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
