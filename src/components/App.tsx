@@ -9,6 +9,7 @@ import { About } from "../pages/About";
 import { Equipment } from "../pages/Equipment";
 import { Contact } from "../pages/Contact";
 import { Login } from "../pages/Login";
+import { Register } from "../pages/Register";
 import { Profile } from "../pages/Profile";
 import { Services } from "../pages/Services";
 import { NotFound } from "../pages/NotFound";
@@ -41,6 +42,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/services" element={<Services />}>
             <Route index element={<ServicesItems services={SERVICES} />} />
             {SERVICES.map((service) => (
