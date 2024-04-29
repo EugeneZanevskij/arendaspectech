@@ -20,14 +20,15 @@ export const Login = () => {
     password: "",
   });
   const navigate = useNavigate();
+  axios.defaults.withCredentials = true;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
-      .post(`${backendRoute}/api/login/`, values)
+      .post(`${backendRoute}/api/login`, values)
       .then((response) => {
         if (!response.data.error) {
-          navigate("/");
+          navigate("/profile");
         } else {
           alert(response.data.error);
         }
