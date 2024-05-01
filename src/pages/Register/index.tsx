@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { getEnvVars } from "../../constants/env";
 import {
   Input,
   Label,
@@ -12,10 +10,11 @@ import {
   TelInput,
   Title,
 } from "./styled";
-
-const backendRoute = getEnvVars("backendRoute");
+import { useAppDispatch } from "../../hooks/redux-hooks";
+import { register } from "../../slices/authSlice";
 
 export const Register = () => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [values, setValues] = useState({
     username: "",
@@ -24,20 +23,16 @@ export const Register = () => {
     password: "",
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    axios
-      .post(`${backendRoute}/api/register`, values)
-      .then((response) => {
-        if (response.status === 201) {
-          navigate("/login");
-        } else {
-          alert(response.data.error);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (values.username && values.email && values.password) {
+      try {
+        await dispatch(register(values)).unwrap();
+        navigate("/login");
+      } catch (e) {
+        console.error(e);
+      }
+    }
   };
   return (
     <RegisterContainer>
