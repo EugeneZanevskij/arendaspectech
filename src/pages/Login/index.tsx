@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getEnvVars } from "../../constants/env";
 import {
   Input,
   Label,
@@ -11,31 +10,26 @@ import {
   SubmitButton,
   Title,
 } from "./styled";
-
-const backendRoute = getEnvVars("backendRoute");
+import { useAppDispatch } from "../../hooks/redux-hooks";
+import { login } from "../../slices/authSlice";
 
 export const Login = () => {
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   axios.defaults.withCredentials = true;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    axios
-      .post(`${backendRoute}/api/login`, values)
-      .then((response) => {
-        if (!response.data.error) {
-          navigate("/profile");
-        } else {
-          alert(response.data.error);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    try {
+      await dispatch(login(values)).unwrap();
+      navigate("/profile");
+    } catch (error) {
+      console.error(error);
+    }
   };
   return (
     <LoginContainer>
