@@ -58,7 +58,9 @@ export const Profile = () => {
           <>
             {user && (
               <UserDataWrapper>
-                <Text fontsize="1.5rem"><BoldText>Имя: {user.username}</BoldText></Text>
+                <Text fontsize="1.5rem">
+                  <BoldText>Имя: {user.username}</BoldText>
+                </Text>
                 <Text>E-mail: {user.email}</Text>
                 <Text>Номер телефона: {user.phone}</Text>
               </UserDataWrapper>
