@@ -1,70 +1,58 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { getEnvVars } from "../../constants/env";
+import { useEffect } from "react";
 import { SectionContainer } from "../../components/SectionContainer";
 import { SectionHeading } from "../../components/SectionHeading";
 import { Link } from "react-router-dom";
-import { IUserData } from "../../types";
 import { BoldText, LogoutButton, Text, UserDataWrapper } from "./styled";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux-hooks";
+import { logout } from "../../slices/authSlice";
+import { getUser } from "../../slices/userSlice";
+import axiosInstance from "../../api/axiosInstance";
 
-const backendRoute = getEnvVars("backendRoute");
 const sectionHeading = {
   title: "Профиль",
 };
 export const Profile = () => {
-  const [auth, setAuth] = useState(false);
-  const [user, setUser] = useState<IUserData | null>(null);
-  axios.defaults.withCredentials = true;
+  const dispatch = useAppDispatch();
+
+  const basicUserInfo = useAppSelector((state) => state.auth.basicUserInfo);
+  const userProfileInfo = useAppSelector((state) => state.user.userProfileData);
 
   useEffect(() => {
-    axios
-      .get(`${backendRoute}/api/users/1`)
-      .then((res) => {
-        if (!res.data.error) {
-          setAuth(true);
-          setUser(res.data);
-        } else {
-          setAuth(false);
-          setUser(null);
-        }
-      })
-      .catch((error) => console.log(error));
-  }, []);
+    if (basicUserInfo) {
+      dispatch(getUser(basicUserInfo.id));
+    }
+  }, [basicUserInfo]);
 
   useEffect(() => {
-    axios
-      .get(`${backendRoute}/api/users/`)
+    axiosInstance
+      .get(`/users`)
       .then((res) => {
         console.log(res.data);
       })
       .catch((error) => console.log(error));
   }, []);
 
-  const handleDelete = () => {
-    axios
-      .post(`${backendRoute}/api/logout`)
-      .then((res) => {
-        if (res.status == 200) {
-          location.reload();
-        }
-      })
-      .catch((error) => console.log(error));
+  const handleDelete = async () => {
+    try {
+      await dispatch(logout()).unwrap();
+      location.reload();
+    } catch (e) {
+      console.error(e);
+    }
   };
   return (
     <SectionContainer>
       <>
         <SectionHeading {...sectionHeading} color={true} />
-        {auth ? (
+        {userProfileInfo ? (
           <>
-            {user && (
-              <UserDataWrapper>
-                <Text fontsize="1.5rem">
-                  <BoldText>Имя: {user.username}</BoldText>
-                </Text>
-                <Text>E-mail: {user.email}</Text>
-                <Text>Номер телефона: {user.phone}</Text>
-              </UserDataWrapper>
-            )}
+            <UserDataWrapper>
+              <Text fontsize="1.5rem">
+                <BoldText>Имя: {userProfileInfo.username}</BoldText>
+              </Text>
+              <Text>E-mail: {userProfileInfo.email}</Text>
+              <Text>Номер телефона: {userProfileInfo.phone}</Text>
+            </UserDataWrapper>
             <LogoutButton onClick={handleDelete}>Выйти</LogoutButton>
           </>
         ) : (
