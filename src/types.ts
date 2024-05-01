@@ -60,3 +60,12 @@ export interface IContactItem {
   text: string;
   href?: string;
 }
+
+export interface IUserData {
+  id: number;
+  username: string;
+  email: string;
+  phone: string;
+  password: string;
+  isAdmin: boolean;
+}
