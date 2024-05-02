@@ -7,23 +7,30 @@ import {
   UserDataWrapper,
 } from "./styled";
 import { IUserData } from "../../types";
-import { MouseEventHandler } from "react";
+import { useState } from "react";
+import { UserModal } from "../UserModal";
 
 interface UserItemProps {
   user: IUserData;
-  handleEdit: MouseEventHandler<HTMLButtonElement>;
-  handleDelete: MouseEventHandler<HTMLButtonElement>;
   isAdmin: boolean;
 }
 
-export const UserItem = ({
-  user,
-  handleEdit,
-  handleDelete,
-  isAdmin,
-}: UserItemProps) => {
+export const UserItem = ({ user, isAdmin }: UserItemProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleModalToggle = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const handleEdit = () => {
+    handleModalToggle();
+  };
+
+  const handleDelete = () => {};
+
   return (
     <UserDataWrapper>
+      {isModalOpen && <UserModal user={user} onClose={handleModalToggle} />}
       {isAdmin && <BackButton to="/users">Назад</BackButton>}
       <Text fontsize="1.5rem">
         <BoldText>Имя: {user.username}</BoldText>
