@@ -32,28 +32,13 @@ export const Profile = () => {
     }
   };
 
-  const handleEdit = () => {
-    // Implement your logic to edit the user
-    console.log("Editing user:", userProfileInfo?.id);
-  };
-
-  const handleDelete = () => {
-    // Implement your logic to delete the user
-    console.log("Deleting user:", userProfileInfo?.id);
-  };
-
   return (
     <SectionContainer>
       <>
         <SectionHeading {...sectionHeading} color={true} />
         {userProfileInfo ? (
           <>
-            <UserItem
-              user={userProfileInfo}
-              handleDelete={handleDelete}
-              handleEdit={handleEdit}
-              isAdmin={false}
-            />
+            <UserItem user={userProfileInfo} isAdmin={false} />
             <LogoutButton onClick={handleLogout}>Выйти</LogoutButton>
           </>
         ) : (
