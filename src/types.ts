@@ -69,3 +69,10 @@ export interface IUserData {
   password: string;
   isAdmin: boolean;
 }
+
+export interface IUserShortData {
+  id: number;
+  username: string;
+  email: string;
+  phone: string;
+}
