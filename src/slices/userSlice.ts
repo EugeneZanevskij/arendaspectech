@@ -22,6 +22,18 @@ export const getUser = createAsyncThunk(
   },
 );
 
+export const updateUser = createAsyncThunk(
+  "users/update",
+  async (user: IUserData) => {
+    const response = await axiosInstance.put(`/users/${user.id}`, {
+      username: user.username,
+      email: user.email,
+      phone: user.phone,
+    });
+    return response.data;
+  },
+);
+
 const userSlice = createSlice({
   name: "user",
   initialState,
@@ -39,6 +51,21 @@ const userSlice = createSlice({
       .addCase(getUser.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message || "Get user profile data failed";
+      })
+      .addCase(updateUser.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(
+        updateUser.fulfilled,
+        (state, action: PayloadAction<IUserData>) => {
+          state.status = "idle";
+          state.userProfileData = action.payload;
+        },
+      )
+      .addCase(updateUser.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message || "Update user profile data failed";
       });
   },
 });
