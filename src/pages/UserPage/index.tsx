@@ -14,21 +14,5 @@ export const UserPage = () => {
     });
   }, [userId]);
 
-  const handleEdit = () => {
-    // Implement your logic to edit the user
-    console.log("Editing user:", user.id);
-  };
-
-  const handleDelete = () => {
-    // Implement your logic to delete the user
-    console.log("Deleting user:", user.id);
-  };
-  return (
-    <UserItem
-      user={user}
-      handleDelete={handleDelete}
-      handleEdit={handleEdit}
-      isAdmin={true}
-    />
-  );
+  return <UserItem user={user} isAdmin={true} />;
 };
