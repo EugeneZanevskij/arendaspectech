@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import { SectionContainer } from "../../components/SectionContainer";
 import { SectionHeading } from "../../components/SectionHeading";
 import { Link } from "react-router-dom";
-import { BoldText, LogoutButton, Text, UserDataWrapper } from "./styled";
+import { LogoutButton } from "./styled";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux-hooks";
 import { logout } from "../../slices/authSlice";
 import { getUser } from "../../slices/userSlice";
-import axiosInstance from "../../api/axiosInstance";
+import { UserItem } from "../../components/UserItem";
 
 const sectionHeading = {
   title: "Профиль",
@@ -23,16 +23,7 @@ export const Profile = () => {
     }
   }, [basicUserInfo]);
 
-  useEffect(() => {
-    axiosInstance
-      .get(`/users`)
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
-
-  const handleDelete = async () => {
+  const handleLogout = async () => {
     try {
       await dispatch(logout()).unwrap();
       location.reload();
@@ -40,20 +31,30 @@ export const Profile = () => {
       console.error(e);
     }
   };
+
+  const handleEdit = () => {
+    // Implement your logic to edit the user
+    console.log("Editing user:", userProfileInfo?.id);
+  };
+
+  const handleDelete = () => {
+    // Implement your logic to delete the user
+    console.log("Deleting user:", userProfileInfo?.id);
+  };
+
   return (
     <SectionContainer>
       <>
         <SectionHeading {...sectionHeading} color={true} />
         {userProfileInfo ? (
           <>
-            <UserDataWrapper>
-              <Text fontsize="1.5rem">
-                <BoldText>Имя: {userProfileInfo.username}</BoldText>
-              </Text>
-              <Text>E-mail: {userProfileInfo.email}</Text>
-              <Text>Номер телефона: {userProfileInfo.phone}</Text>
-            </UserDataWrapper>
-            <LogoutButton onClick={handleDelete}>Выйти</LogoutButton>
+            <UserItem
+              user={userProfileInfo}
+              handleDelete={handleDelete}
+              handleEdit={handleEdit}
+              isAdmin={false}
+            />
+            <LogoutButton onClick={handleLogout}>Выйти</LogoutButton>
           </>
         ) : (
           <>
