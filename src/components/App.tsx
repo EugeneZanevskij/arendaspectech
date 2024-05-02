@@ -19,6 +19,9 @@ import { ServicesItems } from "./ServicesItems";
 import { EquipmentsItems } from "./EquipmentItems";
 import { EQUIPMENT } from "../constants/equipment";
 import { EquipmentInfo } from "./EquipmentInfo";
+import { Users } from "../pages/Users";
+import { UserItems } from "./UserItems";
+import { UserPage } from "../pages/UserPage";
 
 function App() {
   return (
@@ -64,6 +67,10 @@ function App() {
                 ))}
               </Route>
             ))}
+          </Route>
+          <Route path="/users" element={<Users />}>
+            <Route index element={<UserItems />} />
+            <Route path=":userId" element={<UserPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
