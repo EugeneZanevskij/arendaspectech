@@ -22,6 +22,7 @@ import { EquipmentInfo } from "./EquipmentInfo";
 import { Users } from "../pages/Users";
 import { UserItems } from "./UserItems";
 import { UserPage } from "../pages/UserPage";
+import AdminServices from "../pages/Admin/Services";
 
 function App() {
   return (
@@ -71,6 +72,9 @@ function App() {
           <Route path="/users" element={<Users />}>
             <Route index element={<UserItems />} />
             <Route path=":userId" element={<UserPage />} />
+          </Route>
+          <Route path="/admin">
+            <Route path="services" element={<AdminServices />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
