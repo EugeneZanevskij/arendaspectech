@@ -23,6 +23,7 @@ import { Users } from "../pages/Users";
 import { UserItems } from "./UserItems";
 import { UserPage } from "../pages/UserPage";
 import AdminServices from "../pages/Admin/Services";
+import AdminEquipmentType from "../pages/Admin/EquipmentType";
 
 function App() {
   return (
@@ -75,6 +76,7 @@ function App() {
           </Route>
           <Route path="/admin">
             <Route path="services" element={<AdminServices />} />
+            <Route path="equipment-type" element={<AdminEquipmentType />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
