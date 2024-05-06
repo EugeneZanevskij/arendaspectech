@@ -76,3 +76,11 @@ export interface IUserShortData {
   email: string;
   phone: string;
 }
+
+export interface ICategory {
+  name: string;
+}
+
+export interface ICategoryFull extends ICategory {
+  id: number;
+}
