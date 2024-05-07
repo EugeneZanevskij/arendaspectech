@@ -25,6 +25,7 @@ import { UserPage } from "../pages/UserPage";
 import AdminServices from "../pages/Admin/Services";
 import AdminEquipmentType from "../pages/Admin/EquipmentType";
 import AdminEquipment from "../pages/Admin/Equipment";
+import AdminStatus from "../pages/Admin/Status";
 
 function App() {
   return (
@@ -79,6 +80,7 @@ function App() {
             <Route path="services" element={<AdminServices />} />
             <Route path="equipment-type" element={<AdminEquipmentType />} />
             <Route path="equipment" element={<AdminEquipment />} />
+            <Route path="status" element={<AdminStatus />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
