@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 interface ITableProps {
   data: any[];
-  handleDelete: (id: number) => void;
+  handleDelete?: (id: number) => void;
   handleEdit: (id: number) => void;
 }
 const Table = ({ data, handleDelete, handleEdit }: ITableProps) => {
@@ -28,9 +28,11 @@ const Table = ({ data, handleDelete, handleEdit }: ITableProps) => {
               <td key={`${item.id}-${column}`}>{item[column]}</td>
             ))}
             <td>
-              <DeleteButton onClick={() => handleDelete(item.id)}>
-                Delete
-              </DeleteButton>
+              {handleDelete && (
+                <DeleteButton onClick={() => handleDelete(item.id)}>
+                  Delete
+                </DeleteButton>
+              )}
               <EditButton onClick={() => handleEdit(item.id)}>Edit</EditButton>
             </td>
           </tr>
