@@ -13,7 +13,7 @@ const AdminEquipmentType = () => {
   );
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchEquipmentTypes = async () => {
       axiosInstance
         .get(`/admin/equipment-type`)
         .then((res) => {
@@ -22,7 +22,7 @@ const AdminEquipmentType = () => {
         .catch((error) => console.log(error));
     };
 
-    fetchData();
+    fetchEquipmentTypes();
   }, [showModal]);
   const toggleModal = () => {
     setShowModal(!showModal);
