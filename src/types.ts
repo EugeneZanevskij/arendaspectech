@@ -37,15 +37,6 @@ export interface IServicesItem {
   absolutePath: string;
 }
 
-export interface IEquipmentItem {
-  id: number;
-  image?: string;
-  title: string;
-  subtitle: string;
-  relativePath: string;
-  absolutePath: string;
-}
-
 export interface ITestimonial {
   id: number;
   title: string;
@@ -83,4 +74,20 @@ export interface ICategory {
 
 export interface ICategoryFull extends ICategory {
   id: number;
+}
+
+export interface IEquipment {
+  name: string;
+  description: string;
+  imagePath: string;
+  equipmentTypeId: number;
+  price: number;
+}
+
+export interface IEquipmentFull extends IEquipment {
+  id: number;
+}
+
+export interface IEquipmentFullExtended extends IEquipmentFull {
+  services: ICategoryFull[];
 }
