@@ -26,6 +26,7 @@ import AdminServices from "../pages/Admin/Services";
 import AdminEquipmentType from "../pages/Admin/EquipmentType";
 import AdminEquipment from "../pages/Admin/Equipment";
 import AdminStatus from "../pages/Admin/Status";
+import AdminBooking from "../pages/Admin/Booking";
 
 function App() {
   return (
@@ -81,6 +82,7 @@ function App() {
             <Route path="equipment-type" element={<AdminEquipmentType />} />
             <Route path="equipment" element={<AdminEquipment />} />
             <Route path="status" element={<AdminStatus />} />
+            <Route path="bookings" element={<AdminBooking />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
