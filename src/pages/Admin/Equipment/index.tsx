@@ -44,7 +44,7 @@ const AdminEquipment = () => {
   };
 
   const handleDelete = (id: number) => {
-    axiosInstance.delete(`/admin/equipment-to-services/${id}`);
+    axiosInstance.delete(`/admin/equipment/${id}/equipment-to-services`);
     axiosInstance.delete(`/admin/equipment/${id}`).then(() => {
       setEquipments(equipments.filter((equipment) => equipment.id !== id));
     });
@@ -53,9 +53,9 @@ const AdminEquipment = () => {
   const equipmentData = equipments.map((equipment) => ({
     id: equipment.id,
     name: equipment.name,
-    description: equipment.description,
     price: equipment.price,
     imagePath: equipment.imagePath,
+    relativePath: equipment.relativePath,
     equipmentType: equipment.equipmentTypeId,
     services: equipment.services.map((service) => service.name).join(", "),
   }));
