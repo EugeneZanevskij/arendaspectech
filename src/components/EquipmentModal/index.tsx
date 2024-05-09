@@ -84,7 +84,9 @@ export const EquipmentModal = ({ equipment, onClose }: EquipmentModalProps) => {
         });
       } else {
         await axiosInstance.put(`/admin/equipment/${id}`, newValues);
-        await axiosInstance.delete(`/admin/equipment-to-services/${id}`);
+        await axiosInstance.delete(
+          `/admin/equipment/${id}/equipment-to-services`,
+        );
         await axiosInstance.post(`/admin/equipment-to-services`, {
           equipmentId: id,
           servicesIds,
@@ -131,6 +133,15 @@ export const EquipmentModal = ({ equipment, onClose }: EquipmentModalProps) => {
             type="number"
             name="price"
             value={values.price}
+            onChange={handleChange}
+          />
+        </Label>
+        <Label>
+          Relative Path:
+          <Input
+            type="text"
+            name="relativePath"
+            value={values.relativePath}
             onChange={handleChange}
           />
         </Label>
