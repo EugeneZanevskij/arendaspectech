@@ -44,6 +44,14 @@ export interface ITestimonial {
   image: string;
 }
 
+export interface IEquipmentItem {
+  id: number;
+  title: string;
+  subtitle: string;
+  relativePath: string;
+  absolutePath: string;
+}
+
 export interface IContactItem {
   id: number;
   icon: IconType;
@@ -82,6 +90,7 @@ export interface IEquipment {
   imagePath: string;
   equipmentTypeId: number;
   price: number;
+  relativePath: string;
 }
 
 export interface IEquipmentFull extends IEquipment {
@@ -90,4 +99,23 @@ export interface IEquipmentFull extends IEquipment {
 
 export interface IEquipmentFullExtended extends IEquipmentFull {
   services: ICategoryFull[];
+}
+
+export interface IEquipmentToServices {
+  id: number;
+  equipmentId: number;
+  servicesId: number;
+}
+
+export interface IBooking {
+  userId: number;
+  equipmentToServicesId: number;
+  date: Date;
+  leaseDuration: number;
+  comment: string;
+  statusId: number;
+}
+
+export interface IBookingFull extends IBooking {
+  id: number;
 }
