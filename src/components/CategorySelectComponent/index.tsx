@@ -14,7 +14,7 @@ const CategorySelectComponent: React.FC<CategorySelectComponentProps> = ({
 }) => {
   return (
     <select name="categoryId" value={value} onChange={onChange}>
-      <option value="">Select a category</option>
+      <option value="">Выберите из списка</option>
       {categories.map((category) => (
         <option key={category.id} value={category.id}>
           {category.name}
