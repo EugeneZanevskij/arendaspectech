@@ -48,6 +48,7 @@ export interface IEquipmentItem {
   id: number;
   title: string;
   subtitle: string;
+  description?: string;
   relativePath: string;
   absolutePath: string;
 }
