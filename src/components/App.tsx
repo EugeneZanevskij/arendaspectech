@@ -28,6 +28,7 @@ import AdminEquipment from "../pages/Admin/Equipment";
 import AdminStatus from "../pages/Admin/Status";
 import AdminBooking from "../pages/Admin/Booking";
 import BookingForm from "../pages/BookingForm";
+import { EquipmentPage } from "../pages/EquipmentPage";
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/equipment" element={<Equipment />}>
+          <Route path="/equipment-type" element={<Equipment />}>
             <Route index element={<EquipmentsItems equipments={EQUIPMENT} />} />
             {EQUIPMENT.map((equipment) => (
               <Route
@@ -48,6 +49,7 @@ function App() {
               />
             ))}
           </Route>
+          <Route path="/equipment/eu" element={<EquipmentPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
