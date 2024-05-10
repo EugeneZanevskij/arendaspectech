@@ -24,7 +24,7 @@ const Label = styled.label`
   font-weight: bold;
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   padding: 5px 10px;
   background-color: ${({ theme }) => theme.orange};
   color: white;
@@ -64,12 +64,13 @@ export const EquipmentToServicesForm = ({
   };
 
   const fetchEquipmentToService = async (id: number) => {
-    axiosInstance
-      .get(`/admin/equipment-to-services/${id}`)
-      .then((res) => {
-        setValues(res.data);
-      })
-      .catch((error) => console.log(error));
+    id !== 0 &&
+      axiosInstance
+        .get(`/admin/equipment-to-services/${id}`)
+        .then((res) => {
+          setValues(res.data);
+        })
+        .catch((error) => console.log(error));
   };
 
   useEffect(() => {
@@ -79,11 +80,9 @@ export const EquipmentToServicesForm = ({
 
   useEffect(() => {
     fetchAllServices();
-    onEquipmentToServicesIdChange(values.id);
   }, [values.equipmentId]);
 
   const handleSubmit = async () => {
-    console.log(values);
     try {
       const data = await axiosInstance.get(
         `/admin/equipment-to-services/equipment`,
