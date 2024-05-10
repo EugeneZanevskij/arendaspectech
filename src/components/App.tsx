@@ -28,9 +28,26 @@ import AdminEquipment from "../pages/Admin/Equipment";
 import AdminStatus from "../pages/Admin/Status";
 import AdminBooking from "../pages/Admin/Booking";
 import BookingForm from "../pages/BookingForm";
+import { EquipmentPageItem } from "../pages/EquipmentPageItem";
+import axiosInstance from "../api/axiosInstance";
+import { IEquipmentFullExtended } from "../types";
+import { useEffect, useState } from "react";
 import { EquipmentPage } from "../pages/EquipmentPage";
 
 function App() {
+  const [equipments, setEquipments] = useState<IEquipmentFullExtended[]>([]);
+  const fetchEquipment = async () => {
+    axiosInstance
+      .get(`/admin/equipment`)
+      .then((res) => {
+        setEquipments(res.data);
+      })
+      .catch((error) => console.log(error));
+  };
+  useEffect(() => {
+    fetchEquipment();
+  }, []);
+
   return (
     <ThemeProvider theme={THEME}>
       <BrowserRouter>
@@ -49,7 +66,15 @@ function App() {
               />
             ))}
           </Route>
-          <Route path="/equipment/eu" element={<EquipmentPage />} />
+          <Route path="/equipment" element={<EquipmentPage />}>
+            {equipments.map((equipment) => (
+              <Route
+                key={equipment.id}
+                path={equipment.relativePath}
+                element={<EquipmentPageItem equipment={equipment} />}
+              />
+            ))}
+          </Route>
           <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
