@@ -27,6 +27,7 @@ import AdminEquipmentType from "../pages/Admin/EquipmentType";
 import AdminEquipment from "../pages/Admin/Equipment";
 import AdminStatus from "../pages/Admin/Status";
 import AdminBooking from "../pages/Admin/Booking";
+import BookingForm from "../pages/BookingForm";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/booking-form" element={<BookingForm />} />
           <Route path="/services" element={<Services />}>
             <Route index element={<ServicesItems services={SERVICES} />} />
             {SERVICES.map((service) => (
