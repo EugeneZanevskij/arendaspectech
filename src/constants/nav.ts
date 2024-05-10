@@ -24,7 +24,7 @@ export const NAV = [
   },
   {
     name: "Техника",
-    path: ROUTES.EQUIPMENT,
+    path: ROUTES.EQUIPMENTTYPE,
     component: Equipment,
   },
   {

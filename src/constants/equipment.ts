@@ -7,7 +7,7 @@ export const EQUIPMENT: IEquipmentItem[] = [
     subtitle:
       "Задачами этого вида техники является проведение землеройных работ",
     relativePath: "loader",
-    absolutePath: "/equipment/loader",
+    absolutePath: "/equipment-type/loader",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const EQUIPMENT: IEquipmentItem[] = [
     subtitle:
       "Задачами этого вида техники является проведение землеройных работ",
     relativePath: "mini-loader",
-    absolutePath: "/equipment/mini-loader",
+    absolutePath: "/equipment-type/mini-loader",
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ export const EQUIPMENT: IEquipmentItem[] = [
     subtitle:
       "Универсальная техника, сочетающая в себе  функции погрузчика и экскаватора. Землеройные работы и транспортировка грузов",
     relativePath: "excavator",
-    absolutePath: "/equipment/excavator",
+    absolutePath: "/equipment-type/excavator",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ export const EQUIPMENT: IEquipmentItem[] = [
     subtitle:
       "Задачами этого вида техники является проведение землеройных работ (планировка, копка, выравнивание)",
     relativePath: "mini-excavator",
-    absolutePath: "/equipment/mini-excavator",
+    absolutePath: "/equipment-type/mini-excavator",
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ export const EQUIPMENT: IEquipmentItem[] = [
     subtitle:
       "Задачами этого вида техники являются грузоперевозки, доставка сыпучих материалов: песка, щебня, гальки",
     relativePath: "samosval",
-    absolutePath: "/equipment/samosval",
+    absolutePath: "/equipment-type/samosval",
   },
   {
     id: 6,
@@ -47,6 +47,6 @@ export const EQUIPMENT: IEquipmentItem[] = [
     subtitle:
       "Задачами этого вида техники является перевозка спецтехники, транспорта, эвакуатор",
     relativePath: "lowboy",
-    absolutePath: "/equipment/lowboy",
+    absolutePath: "/equipment-type/lowboy",
   },
 ];
