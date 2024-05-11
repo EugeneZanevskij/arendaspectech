@@ -1,6 +1,6 @@
-import { IEquipmentItem } from "../types";
+import { IEquipmentTypeItem } from "../types";
 
-export const EQUIPMENT: IEquipmentItem[] = [
+export const EQUIPMENTTYPES: IEquipmentTypeItem[] = [
   {
     id: 1,
     title: "Погрузчик",
