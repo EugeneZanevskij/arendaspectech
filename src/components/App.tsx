@@ -6,7 +6,7 @@ import { Global } from "../styled";
 import { Footer } from "./Footer";
 import { Home } from "../pages/Home";
 import { About } from "../pages/About";
-import { Equipment } from "../pages/Equipment";
+import { EquipmentType } from "../pages/EquipmentType";
 import { Contact } from "../pages/Contact";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
@@ -16,9 +16,9 @@ import { NotFound } from "../pages/NotFound";
 import { SERVICES } from "../constants/services";
 import { ServiceInfo } from "../components/ServiceInfo";
 import { ServicesItems } from "./ServicesItems";
-import { EquipmentsItems } from "./EquipmentItems";
-import { EQUIPMENT } from "../constants/equipment";
-import { EquipmentInfo } from "./EquipmentInfo";
+import { EquipmentsTypeItems } from "./EquipmentItems";
+import { EQUIPMENTTYPES } from "../constants/equipmentTypes";
+import { EquipmentTypeInfo } from "./EquipmentTypeInfo";
 import { Users } from "../pages/Users";
 import { UserItems } from "./UserItems";
 import { UserPage } from "../pages/UserPage";
@@ -33,6 +33,7 @@ import axiosInstance from "../api/axiosInstance";
 import { IEquipmentFullExtended } from "../types";
 import { useEffect, useState } from "react";
 import { EquipmentPage } from "../pages/EquipmentPage";
+import { EquipmentsItems } from "./EquipmentsItems";
 
 function App() {
   const [equipments, setEquipments] = useState<IEquipmentFullExtended[]>([]);
@@ -56,17 +57,24 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/equipment-type" element={<Equipment />}>
-            <Route index element={<EquipmentsItems equipments={EQUIPMENT} />} />
-            {EQUIPMENT.map((equipment) => (
+          <Route path="/equipment-type" element={<EquipmentType />}>
+            <Route
+              index
+              element={<EquipmentsTypeItems equipmentTypes={EQUIPMENTTYPES} />}
+            />
+            {EQUIPMENTTYPES.map((equipmentType) => (
               <Route
-                key={equipment.id}
-                path={equipment.relativePath}
-                element={<EquipmentInfo equipment={equipment} />}
+                key={equipmentType.id}
+                path={equipmentType.relativePath}
+                element={<EquipmentTypeInfo equipmentType={equipmentType} />}
               />
             ))}
           </Route>
           <Route path="/equipment" element={<EquipmentPage />}>
+            <Route
+              index
+              element={<EquipmentsItems equipments={equipments} />}
+            />
             {equipments.map((equipment) => (
               <Route
                 key={equipment.id}
