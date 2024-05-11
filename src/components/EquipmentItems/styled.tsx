@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const EquipmentContainer = styled.div`
+export const EquipmentTypeContainer = styled.div`
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(3, 1fr);

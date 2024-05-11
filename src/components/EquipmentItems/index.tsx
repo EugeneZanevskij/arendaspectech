@@ -1,17 +1,22 @@
-import { IEquipmentItem } from "../../types";
-import { EquipmentItem } from "./EquipmentItem";
-import { EquipmentContainer } from "./styled";
+import { IEquipmentTypeItem } from "../../types";
+import { EquipmentTypeItem } from "./EquipmentTypeItem";
+import { EquipmentTypeContainer } from "./styled";
 
-interface EquipmentItemsProps {
-  equipments: IEquipmentItem[];
+interface EquipmentTypeItemsProps {
+  equipmentTypes: IEquipmentTypeItem[];
 }
 
-export const EquipmentsItems = ({ equipments }: EquipmentItemsProps) => {
+export const EquipmentsTypeItems = ({
+  equipmentTypes,
+}: EquipmentTypeItemsProps) => {
   return (
-    <EquipmentContainer>
-      {equipments.map((equipment) => (
-        <EquipmentItem equipment={equipment} key={equipment.id} />
+    <EquipmentTypeContainer>
+      {equipmentTypes.map((equipmentType) => (
+        <EquipmentTypeItem
+          equipmentType={equipmentType}
+          key={equipmentType.id}
+        />
       ))}
-    </EquipmentContainer>
+    </EquipmentTypeContainer>
   );
 };
