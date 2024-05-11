@@ -40,7 +40,7 @@ export const HomeHero = () => {
               </ContactLink>
             </HomeHeroBlock>
           </HomeHeroBlockText>
-          <HomeHeroButton>Заказать звонок</HomeHeroButton>
+          <HomeHeroButton to="/booking-form">Сделать заказ</HomeHeroButton>
         </HomeHeroBlock>
       </HomeHeroContainer>
     </HomeHeroSection>

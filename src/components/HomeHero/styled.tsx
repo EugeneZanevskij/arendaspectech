@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HomeHeroSection = styled.section`
@@ -78,9 +79,10 @@ export const HomeHeroText = styled.p`
   font-size: 1.25rem;
 `;
 
-export const HomeHeroButton = styled.button`
+export const HomeHeroButton = styled(Link)`
   background-color: ${({ theme }) => theme.orange};
   color: ${({ theme }) => theme.white};
+  text-decoration: none;
   border: none;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
