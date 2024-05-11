@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const EquipmentItemStyle = styled(Link)`
+export const EquipmentTypeItemStyle = styled(Link)`
   max-width: 20rem;
   width: 100%;
   margin: 0 auto;
@@ -16,32 +16,32 @@ export const EquipmentItemStyle = styled(Link)`
   text-decoration: none;
 `;
 
-export const EquipmentItemContainer = styled.div`
+export const EquipmentTypeItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
 `;
 
-export const EquipmentItemImg = styled.img`
+export const EquipmentTypeItemImg = styled.img`
   width: 100%;
   aspect-ratio: 3/2;
   object-fit: cover;
   border-radius: 2rem;
 `;
 
-export const EquipmentItemTitle = styled.h3`
+export const EquipmentTypeItemTitle = styled.h3`
   font-size: 1.5rem;
   color: ${({ theme }) => theme.orange};
 `;
 
-export const EquipmentItemSubtitle = styled.p`
+export const EquipmentTypeItemSubtitle = styled.p`
   font-size: 1.2rem;
   color: ${({ theme }) => theme.blackTextColor};
   text-align: center;
 `;
 
-export const EquipmentItemText = styled.p`
+export const EquipmentTypeItemText = styled.p`
   font-size: 1rem;
   color: ${({ theme }) => theme.orange};
 `;
