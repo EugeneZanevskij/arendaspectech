@@ -1,10 +1,11 @@
 import { Home } from "../pages/Home";
 import { About } from "../pages/About";
 import { Services } from "../pages/Services";
-import { Equipment } from "../pages/Equipment";
+import { EquipmentType } from "../pages/EquipmentType";
 import { Contact } from "../pages/Contact";
 import { Profile } from "../pages/Profile";
 import { ROUTES } from "./routes";
+import { EquipmentPage } from "../pages/EquipmentPage";
 
 export const NAV = [
   {
@@ -23,9 +24,14 @@ export const NAV = [
     component: Services,
   },
   {
-    name: "Техника",
+    name: "Категории",
     path: ROUTES.EQUIPMENTTYPE,
-    component: Equipment,
+    component: EquipmentType,
+  },
+  {
+    name: "Техника",
+    path: ROUTES.EQUIPMENT,
+    component: EquipmentPage,
   },
   {
     name: "Контакты",
