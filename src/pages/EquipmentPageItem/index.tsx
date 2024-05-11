@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { IEquipmentFullExtended, IEquipmentItem } from "../../types";
+import { IEquipmentFullExtended, IEquipmentTypeItem } from "../../types";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import axiosInstance from "../../api/axiosInstance";
-import { EQUIPMENT } from "../../constants/equipment";
+import { EQUIPMENTTYPES } from "../../constants/equipmentTypes";
 
 interface EquipmentPageProps {
   equipment: IEquipmentFullExtended;
@@ -121,16 +121,16 @@ const EquipmentTypeDescription = styled.p`
 `;
 
 export const EquipmentPageItem = ({ equipment }: EquipmentPageProps) => {
-  const [category, setCategory] = useState<IEquipmentItem>(
-    {} as IEquipmentItem,
+  const [category, setCategory] = useState<IEquipmentTypeItem>(
+    {} as IEquipmentTypeItem,
   );
   const fetchEquipmentType = async () => {
     axiosInstance
       .get(`/admin/equipment-type/${equipment.id}`)
       .then((res) => {
         setCategory(
-          EQUIPMENT.find((eq) => eq.title === res.data.name) ||
-            ({} as IEquipmentItem),
+          EQUIPMENTTYPES.find((eq) => eq.title === res.data.name) ||
+            ({} as IEquipmentTypeItem),
         );
       })
       .catch((error) => console.log(error));
