@@ -1,7 +1,7 @@
 import { SectionContainer } from "../SectionContainer";
 import { SectionHeading } from "../SectionHeading";
 
-interface EquipmentSectionProps {
+interface EquipmentTypeSectionProps {
   children: JSX.Element;
 }
 
@@ -9,7 +9,9 @@ const sectionHeading = {
   title: "Техника по категориям",
   subtitle: "ИП Колонтай - ваш надежный помощник по аренде спецтехники",
 };
-export const EquipmentSection = ({ children }: EquipmentSectionProps) => {
+export const EquipmentTypeSection = ({
+  children,
+}: EquipmentTypeSectionProps) => {
   return (
     <SectionContainer>
       <>
