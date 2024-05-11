@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const EquipmentInfoContainer = styled.div`
+export const EquipmentTypeInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
 `;
 
-export const EquipmentInfoData = styled.div`
+export const EquipmentTypeInfoData = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -19,7 +19,7 @@ export const EquipmentInfoData = styled.div`
   }
 `;
 
-export const EquipmentInfoTitle = styled.h3`
+export const EquipmentTypeInfoTitle = styled.h3`
   color: ${({ theme }) => theme.black};
   font-size: 2rem;
 `;
