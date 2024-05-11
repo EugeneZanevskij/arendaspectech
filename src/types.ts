@@ -44,9 +44,10 @@ export interface ITestimonial {
   image: string;
 }
 
-export interface IEquipmentItem {
+export interface IEquipmentTypeItem {
   id: number;
   title: string;
+  image?: string;
   subtitle: string;
   description?: string;
   relativePath: string;
