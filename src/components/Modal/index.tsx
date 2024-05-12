@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { IoMdClose } from "react-icons/io";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
-import { CloseButton, ModalContainer, ModalForm } from "./styled";
+import { CloseButton, ModalContainer, ModalWrapper } from "./styled";
 import usePortal from "../../hooks/usePortal";
 
 interface IModalProps {
@@ -16,12 +16,12 @@ export function Modal({ onClose, id, children }: IModalProps) {
 
   return render(
     <ModalContainer>
-      <ModalForm ref={modalRef}>
+      <ModalWrapper ref={modalRef}>
         <CloseButton onClick={onClose}>
           <IoMdClose size={24} color="#fff" />
         </CloseButton>
         {children}
-      </ModalForm>
+      </ModalWrapper>
     </ModalContainer>,
   );
 }
