@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { IEquipmentFullExtended } from "../../../types";
 import axiosInstance from "../../../api/axiosInstance";
 import Table from "../../../components/Table";
-import { EquipmentModal } from "../../../components/EquipmentModal";
+import { EquipmentModal } from "../../../components/Modal/EquipmentModal";
 
 const AdminEquipment = () => {
   const [equipments, setEquipments] = useState<IEquipmentFullExtended[]>([]);

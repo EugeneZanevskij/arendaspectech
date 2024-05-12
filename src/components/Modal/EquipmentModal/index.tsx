@@ -1,40 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Modal } from "../Modal";
-import styled from "styled-components";
-import { IEquipmentFullExtended, ICategoryFull } from "../../types";
-import axiosInstance from "../../api/axiosInstance";
-import MultiSelectComponent from "../Multiselect";
-import CategorySelectComponent from "../CategorySelectComponent";
+import { Modal } from "../index";
+import { IEquipmentFullExtended, ICategoryFull } from "../../../types";
+import axiosInstance from "../../../api/axiosInstance";
+import MultiSelectComponent from "../../Multiselect";
+import CategorySelectComponent from "../../CategorySelectComponent";
+import {
+  ModalButton,
+  ModalForm,
+  ModalHeading,
+  ModalInput,
+  ModalLabel,
+} from "../styled";
 
 interface EquipmentModalProps {
   equipment: IEquipmentFullExtended;
   onClose: () => void;
 }
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  color: ${({ theme }) => theme.white};
-`;
-
-const Input = styled.input`
-  margin-bottom: 10px;
-  padding: 5px;
-  border-radius: 0.5rem;
-`;
-
-const Label = styled.label`
-  font-weight: bold;
-`;
-
-const Button = styled.button`
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-`;
 
 export const EquipmentModal = ({ equipment, onClose }: EquipmentModalProps) => {
   const [values, setValues] = useState<IEquipmentFullExtended>(equipment);
@@ -69,7 +50,6 @@ export const EquipmentModal = ({ equipment, onClose }: EquipmentModalProps) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(values);
     const { services, id, ...newValues } = values;
     const servicesIds = services.map((service) => service.id).toString();
     try {
@@ -107,55 +87,57 @@ export const EquipmentModal = ({ equipment, onClose }: EquipmentModalProps) => {
 
   return (
     <Modal id="equipment-modal" onClose={onClose}>
-      <Form onSubmit={handleSubmit}>
-        <h2>{isNew ? "Create" : "Edit"} Equipment</h2>
-        <Label>
-          Name:
-          <Input
+      <ModalForm onSubmit={handleSubmit}>
+        <ModalHeading>
+          {isNew ? "Добавить" : "Редактировать"} технику
+        </ModalHeading>
+        <ModalLabel>
+          Наименование:
+          <ModalInput
             type="text"
             name="name"
             value={values.name}
             onChange={handleChange}
           />
-        </Label>
-        <Label>
-          Description:
-          <Input
+        </ModalLabel>
+        <ModalLabel>
+          Описание:
+          <ModalInput
             type="text"
             name="description"
             value={values.description}
             onChange={handleChange}
           />
-        </Label>
-        <Label>
-          Price:
-          <Input
+        </ModalLabel>
+        <ModalLabel>
+          Цена:
+          <ModalInput
             type="number"
             name="price"
             value={values.price}
             onChange={handleChange}
           />
-        </Label>
-        <Label>
-          Relative Path:
-          <Input
+        </ModalLabel>
+        <ModalLabel>
+          Относительный путь:
+          <ModalInput
             type="text"
             name="relativePath"
             value={values.relativePath}
             onChange={handleChange}
           />
-        </Label>
-        <Label>
-          Image:
-          <Input
+        </ModalLabel>
+        <ModalLabel>
+          Путь к изображению:
+          <ModalInput
             type="text"
             name="imagePath"
             value={values.imagePath}
             onChange={handleChange}
           />
-        </Label>
-        <Label>
-          Category:
+        </ModalLabel>
+        <ModalLabel>
+          Категория техники:
           <CategorySelectComponent
             categories={allEquipmentTypes}
             value={values.equipmentTypeId}
@@ -163,9 +145,9 @@ export const EquipmentModal = ({ equipment, onClose }: EquipmentModalProps) => {
               setValues({ ...values, equipmentTypeId: +e.target.value })
             }
           />
-        </Label>
-        <Label>
-          Selected Services:
+        </ModalLabel>
+        <ModalLabel>
+          Выбранные услуги:
           <MultiSelectComponent
             options={allServices}
             onChange={(selectedOptions: number[]) =>
@@ -177,9 +159,11 @@ export const EquipmentModal = ({ equipment, onClose }: EquipmentModalProps) => {
               })
             }
           />
-        </Label>
-        <Button type="submit">{isNew ? "Create" : "Edit"}</Button>
-      </Form>
+        </ModalLabel>
+        <ModalButton type="submit">
+          {isNew ? "Добавить" : "Обновить"}
+        </ModalButton>
+      </ModalForm>
     </Modal>
   );
 };
