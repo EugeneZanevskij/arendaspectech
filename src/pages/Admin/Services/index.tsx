@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ICategoryFull } from "../../../types";
 import axiosInstance from "../../../api/axiosInstance";
 import Table from "../../../components/Table";
-import { ServiceModal } from "../../../components/ServiceModal";
+import { ServiceModal } from "../../../components/Modal/ServiceModal";
 
 const AdminServices = () => {
   const [services, setServices] = useState<ICategoryFull[]>([]);
