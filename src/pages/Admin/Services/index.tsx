@@ -51,8 +51,8 @@ const AdminServices = () => {
       {showModal && (
         <ServiceModal service={service} onClose={handleModalToggle} />
       )}
-      <h1>ServicesAdmin</h1>
-      <Button onClick={addService}>Add Service</Button>
+      <h1>Услуги</h1>
+      <Button onClick={addService}>Добавить услугу</Button>
       {services.length > 0 ? (
         <Table
           data={services}
@@ -60,7 +60,7 @@ const AdminServices = () => {
           handleDelete={handleDelete}
         />
       ) : (
-        <p>No data</p>
+        <p>Нет услуг</p>
       )}
     </AdminServicesContainer>
   );
@@ -70,16 +70,17 @@ const AdminServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 `;
 
 const Button = styled.button`
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: ${({ theme }) => theme.orange};
+  color: ${({ theme }) => theme.white};
+  font-size: 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 10px;
 `;
 
 export default AdminServices;
