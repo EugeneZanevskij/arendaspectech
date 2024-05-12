@@ -19,7 +19,7 @@ import { ServicesItems } from "./ServicesItems";
 import { EquipmentsTypeItems } from "./EquipmentItems";
 import { EQUIPMENTTYPES } from "../constants/equipmentTypes";
 import { EquipmentTypeInfo } from "./EquipmentTypeInfo";
-import { Users } from "../pages/Users";
+import { Users } from "../pages/Admin/Users";
 import { UserItems } from "./UserItems";
 import { UserPage } from "../pages/UserPage";
 import AdminServices from "../pages/Admin/Services";
@@ -111,12 +111,12 @@ function App() {
               </Route>
             ))}
           </Route>
-          <Route path="/users" element={<Users />}>
-            <Route index element={<UserItems />} />
-            <Route path=":userId" element={<UserPage />} />
-          </Route>
           <Route path="/admin" element={<AdminPage />}>
             <Route index />
+            <Route path="users" element={<Users />}>
+              <Route index element={<UserItems />} />
+              <Route path=":userId" element={<UserPage />} />
+            </Route>
             <Route path="services" element={<AdminServices />} />
             <Route path="equipment-type" element={<AdminEquipmentType />} />
             <Route path="equipment" element={<AdminEquipment />} />
