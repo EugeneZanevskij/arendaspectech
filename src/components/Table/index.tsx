@@ -30,10 +30,10 @@ const Table = ({ data, handleDelete, handleEdit }: ITableProps) => {
             <td>
               {handleDelete && (
                 <DeleteButton onClick={() => handleDelete(item.id)}>
-                  Delete
+                  Удалить
                 </DeleteButton>
               )}
-              <EditButton onClick={() => handleEdit(item.id)}>Edit</EditButton>
+              <EditButton onClick={() => handleEdit(item.id)}>Изменить</EditButton>
             </td>
           </tr>
         ))}
