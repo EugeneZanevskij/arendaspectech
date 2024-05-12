@@ -60,8 +60,8 @@ const AdminEquipmentType = () => {
           onClose={handleModalToggle}
         />
       )}
-      <h1>EquipmentTypeAdmin</h1>
-      <Button onClick={addService}>Add Service</Button>
+      <h1>Категории техники</h1>
+      <Button onClick={addService}>Добавить категорию</Button>
       {equipmentTypes.length > 0 ? (
         <Table
           data={equipmentTypes}
@@ -69,7 +69,7 @@ const AdminEquipmentType = () => {
           handleDelete={handleDelete}
         />
       ) : (
-        <p>No data</p>
+        <p>Нет данных</p>
       )}
     </AdminServicesContainer>
   );
@@ -79,16 +79,17 @@ const AdminServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 `;
 
 const Button = styled.button`
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: ${({ theme }) => theme.orange};
+  color: ${({ theme }) => theme.white};
+  font-size: 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 10px;
 `;
 
 export default AdminEquipmentType;
