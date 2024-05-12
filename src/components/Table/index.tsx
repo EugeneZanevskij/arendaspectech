@@ -33,7 +33,9 @@ const Table = ({ data, handleDelete, handleEdit }: ITableProps) => {
                   Удалить
                 </DeleteButton>
               )}
-              <EditButton onClick={() => handleEdit(item.id)}>Изменить</EditButton>
+              <EditButton onClick={() => handleEdit(item.id)}>
+                Изменить
+              </EditButton>
             </td>
           </tr>
         ))}
