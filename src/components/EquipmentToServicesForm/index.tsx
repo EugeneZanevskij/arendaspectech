@@ -29,6 +29,7 @@ const Button = styled.a`
   background-color: ${({ theme }) => theme.orange};
   color: white;
   border: none;
+  text-align: center;
   cursor: pointer;
 `;
 
@@ -101,9 +102,8 @@ export const EquipmentToServicesForm = ({
 
   return (
     <Form>
-      <h2>Edit Equipment To Services</h2>
       <Label>
-        Equipment:
+        Техника:
         <CategorySelectComponent
           categories={allEquipment}
           value={values.equipmentId}
@@ -113,7 +113,7 @@ export const EquipmentToServicesForm = ({
         />
       </Label>
       <Label>
-        Services:
+        Услуга:
         <CategorySelectComponent
           categories={allServices}
           value={values.servicesId}
@@ -122,7 +122,7 @@ export const EquipmentToServicesForm = ({
           }
         />
       </Label>
-      <Button onClick={handleSubmit}>Update EquipmentToServicesId</Button>
+      <Button onClick={handleSubmit}>Обновить технику и услугу</Button>
     </Form>
   );
 };

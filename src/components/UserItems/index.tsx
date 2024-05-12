@@ -26,7 +26,7 @@ export const UserItems: React.FC = () => {
           <UserCardItem>{user.username}</UserCardItem>
           <UserCardItem>{user.email}</UserCardItem>
           <UserCardItem>{user.phone}</UserCardItem>
-          <UserCardLink to={`/users/${user.id}`}>Open Page</UserCardLink>
+          <UserCardLink to={`/admin/users/${user.id}`}>Подробнее</UserCardLink>
         </UserCard>
       ))}
     </Container>

@@ -8,7 +8,7 @@ import {
 } from "./styled";
 import { IUserData } from "../../types";
 import { useState } from "react";
-import { UserModal } from "../UserModal";
+import { UserModal } from "../Modal/UserModal";
 
 interface UserItemProps {
   user: IUserData;
@@ -31,14 +31,14 @@ export const UserItem = ({ user, isAdmin }: UserItemProps) => {
   return (
     <UserDataWrapper>
       {isModalOpen && <UserModal user={user} onClose={handleModalToggle} />}
-      {isAdmin && <BackButton to="/users">Назад</BackButton>}
+      {isAdmin && <BackButton to="/admin/users">Назад</BackButton>}
       <Text fontsize="1.5rem">
         <BoldText>Имя: {user.username}</BoldText>
       </Text>
       <Text>E-mail: {user.email}</Text>
       <Text>Номер телефона: {user.phone}</Text>
-      <EditButton onClick={handleEdit}>Edit</EditButton>
-      <DeleteButton onClick={handleDelete}>Delete</DeleteButton>
+      <EditButton onClick={handleEdit}>Изменить пользователя</EditButton>
+      <DeleteButton onClick={handleDelete}>Удалить пользователя</DeleteButton>
     </UserDataWrapper>
   );
 };
