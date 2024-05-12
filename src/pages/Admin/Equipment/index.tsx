@@ -65,8 +65,8 @@ const AdminEquipment = () => {
       {showModal && (
         <EquipmentModal equipment={equipment} onClose={handleModalToggle} />
       )}
-      <h1>Equipment Admin</h1>
-      <Button onClick={addEquipment}>Add Equipment</Button>
+      <h1>Техника</h1>
+      <Button onClick={addEquipment}>Добавить технику</Button>
       {equipments.length > 0 ? (
         <Table
           data={equipmentData}
@@ -74,7 +74,7 @@ const AdminEquipment = () => {
           handleDelete={handleDelete}
         />
       ) : (
-        <p>No data</p>
+        <p>Нет данных</p>
       )}
     </AdminEquipmentContainer>
   );
@@ -84,16 +84,17 @@ const AdminEquipmentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 `;
 
 const Button = styled.button`
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: ${({ theme }) => theme.orange};
+  color: ${({ theme }) => theme.white};
+  font-size: 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 10px;
 `;
 
 export default AdminEquipment;
