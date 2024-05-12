@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ICategoryFull } from "../../../types";
 import axiosInstance from "../../../api/axiosInstance";
 import Table from "../../../components/Table";
-import { StatusModal } from "../../../components/StatusModal";
+import { StatusModal } from "../../../components/Modal/StatusModal";
 
 const AdminStatus = () => {
   const [statuses, setStatuses] = useState<ICategoryFull[]>([]);
