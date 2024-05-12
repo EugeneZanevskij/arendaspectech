@@ -1,38 +1,19 @@
 import React, { useState } from "react";
-import { Modal } from "../Modal";
-import styled from "styled-components";
-import { ICategory, ICategoryFull } from "../../types";
-import axiosInstance from "../../api/axiosInstance";
+import { Modal } from "../index";
+import { ICategory, ICategoryFull } from "../../../types";
+import axiosInstance from "../../../api/axiosInstance";
+import {
+  ModalButton,
+  ModalForm,
+  ModalHeading,
+  ModalInput,
+  ModalLabel,
+} from "../styled";
 
 interface EquipmentTypeModalProps {
   equipmentType: ICategoryFull;
   onClose: () => void;
 }
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  color: ${({ theme }) => theme.white};
-`;
-
-const Input = styled.input`
-  margin-bottom: 10px;
-  padding: 5px;
-  border-radius: 0.5rem;
-`;
-
-const Label = styled.label`
-  font-weight: bold;
-`;
-
-const Button = styled.button`
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-`;
 
 export const EquipmentTypeModal = ({
   equipmentType,
@@ -62,18 +43,26 @@ export const EquipmentTypeModal = ({
 
   return (
     <Modal id="service-modal" onClose={onClose}>
-      <Form onSubmit={handleSubmit}>
-        <h2>Update Equipment Type</h2>
-        <Label htmlFor="name">Name:</Label>
-        <Input
-          type="text"
-          id="name"
-          name="name"
-          value={values.name}
-          onChange={handleChange}
-        />
-        <Button type="submit">{isNew ? "Add" : "Update"}</Button>
-      </Form>
+      <ModalForm onSubmit={handleSubmit}>
+        <ModalHeading>
+          {isNew
+            ? "Добавить категорию техники"
+            : "Редактировать категорию техники"}
+        </ModalHeading>
+        <ModalLabel htmlFor="name">
+          Наименование:
+          <ModalInput
+            type="text"
+            id="name"
+            name="name"
+            value={values.name}
+            onChange={handleChange}
+          />
+        </ModalLabel>
+        <ModalButton type="submit">
+          {isNew ? "Добавить" : "Обновить"}
+        </ModalButton>
+      </ModalForm>
     </Modal>
   );
 };

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ICategoryFull } from "../../../types";
 import axiosInstance from "../../../api/axiosInstance";
 import Table from "../../../components/Table";
-import { EquipmentTypeModal } from "../../../components/EquipmentTypeModal";
+import { EquipmentTypeModal } from "../../../components/Modal/EquipmentTypeModal";
 
 const AdminEquipmentType = () => {
   const [equipmentTypes, setEquipmentTypes] = useState<ICategoryFull[]>([]);
