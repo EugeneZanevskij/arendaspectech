@@ -37,8 +37,8 @@ export const UserItem = ({ user, isAdmin }: UserItemProps) => {
       </Text>
       <Text>E-mail: {user.email}</Text>
       <Text>Номер телефона: {user.phone}</Text>
-      <EditButton onClick={handleEdit}>Изменить пользователя</EditButton>
-      <DeleteButton onClick={handleDelete}>Удалить пользователя</DeleteButton>
+      <EditButton onClick={handleEdit}>Изменить</EditButton>
+      <DeleteButton onClick={handleDelete}>Удалить</DeleteButton>
     </UserDataWrapper>
   );
 };

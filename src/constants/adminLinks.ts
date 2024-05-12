@@ -6,7 +6,7 @@ export const ADMIN_LINKS = [
   },
   {
     id: 2,
-    title: "Пользователи",
+    title: "Клиенты",
     link: "/admin/users",
   },
   {
