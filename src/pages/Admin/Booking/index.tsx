@@ -83,7 +83,7 @@ const AdminBooking = () => {
       {showModal && (
         <BookingModal booking={booking} onClose={handleModalToggle} />
       )}
-      <h1>Booking Admin</h1>
+      <h1>Заказы на бронирование</h1>
       {bookings.length > 0 ? (
         <Table
           data={bookingData}
@@ -91,7 +91,7 @@ const AdminBooking = () => {
           handleDelete={handleDelete}
         />
       ) : (
-        <p>No data</p>
+        <p>Нет данных</p>
       )}
     </AdminEquipmentContainer>
   );
@@ -101,6 +101,7 @@ const AdminEquipmentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 `;
 
 export default AdminBooking;
