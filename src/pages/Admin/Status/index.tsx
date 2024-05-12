@@ -43,12 +43,12 @@ const AdminStatus = () => {
   return (
     <AdminStatusContainer>
       {showModal && <StatusModal status={status} onClose={handleModalToggle} />}
-      <h1>AdminStatus</h1>
-      <Button onClick={addService}>Add Service</Button>
+      <h1>Статусы заказа</h1>
+      <Button onClick={addService}>Добавить статус</Button>
       {statuses.length > 0 ? (
         <Table data={statuses} handleEdit={handleEdit} />
       ) : (
-        <p>No data</p>
+        <p>Нет статусов</p>
       )}
     </AdminStatusContainer>
   );
@@ -58,12 +58,14 @@ const AdminStatusContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 `;
 
 const Button = styled.button`
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: ${({ theme }) => theme.orange};
+  color: ${({ theme }) => theme.white};
+  font-size: 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
