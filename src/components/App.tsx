@@ -34,6 +34,7 @@ import { IEquipmentFullExtended } from "../types";
 import { useEffect, useState } from "react";
 import { EquipmentPage } from "../pages/EquipmentPage";
 import { EquipmentsItems } from "./EquipmentsItems";
+import AdminPage from "../pages/AdminPage";
 
 function App() {
   const [equipments, setEquipments] = useState<IEquipmentFullExtended[]>([]);
@@ -114,7 +115,8 @@ function App() {
             <Route index element={<UserItems />} />
             <Route path=":userId" element={<UserPage />} />
           </Route>
-          <Route path="/admin">
+          <Route path="/admin" element={<AdminPage />}>
+            <Route index />
             <Route path="services" element={<AdminServices />} />
             <Route path="equipment-type" element={<AdminEquipmentType />} />
             <Route path="equipment" element={<AdminEquipment />} />
