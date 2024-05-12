@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { IBookingFull, ICategoryFull, IUserData } from "../../../types";
 import axiosInstance from "../../../api/axiosInstance";
 import Table from "../../../components/Table";
-import { BookingModal } from "../../../components/BookingModal";
+import { BookingModal } from "../../../components/Modal/BookingModal";
 
 const AdminBooking = () => {
   const [bookings, setBookings] = useState<IBookingFull[]>([]);

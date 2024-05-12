@@ -1,40 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Modal } from "../Modal";
-import styled from "styled-components";
-import { IBookingFull, ICategoryFull } from "../../types";
-import { EquipmentToServicesForm } from "../EquipmentToServicesForm";
-import axiosInstance from "../../api/axiosInstance";
-import CategorySelectComponent from "../CategorySelectComponent";
+import { Modal } from "../index";
+import { IBookingFull, ICategoryFull } from "../../../types";
+import { EquipmentToServicesForm } from "../../EquipmentToServicesForm";
+import axiosInstance from "../../../api/axiosInstance";
+import CategorySelectComponent from "../../CategorySelectComponent";
+import {
+  ModalButton,
+  ModalForm,
+  ModalHeading,
+  ModalInput,
+  ModalLabel,
+} from "../styled";
 
 interface BookingModalProps {
   booking: IBookingFull;
   onClose: () => void;
 }
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  color: ${({ theme }) => theme.white};
-`;
-
-const Input = styled.input`
-  margin-bottom: 10px;
-  padding: 5px;
-  border-radius: 0.5rem;
-`;
-
-const Label = styled.label`
-  font-weight: bold;
-`;
-
-const Button = styled.button`
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-`;
 
 export const BookingModal = ({ booking, onClose }: BookingModalProps) => {
   const [values, setValues] = useState<IBookingFull>(booking);
@@ -79,36 +60,38 @@ export const BookingModal = ({ booking, onClose }: BookingModalProps) => {
 
   return (
     <Modal id="booking-modal" onClose={onClose}>
-      <Form onSubmit={handleSubmit}>
-        <h2>Edit booking</h2>
-        <Label>
-          Comment:
-          <Input
+      <ModalForm onSubmit={handleSubmit}>
+        <ModalHeading>Редактирование брони</ModalHeading>
+        <ModalLabel>
+          Комментарий:
+          <ModalInput
             type="text"
             name="comment"
             value={values.comment}
             onChange={handleChange}
           />
-        </Label>
-        <Label>
-          Lease duration:
-          <Input
+        </ModalLabel>
+        <ModalLabel>
+          Длительность аренды:
+          <ModalInput
             type="number"
             name="leaseDuration"
             value={values.leaseDuration}
             onChange={handleChange}
           />
-        </Label>
-        <Label>
-          Date:
-          <Input
+        </ModalLabel>
+        <ModalLabel>
+          Дата:
+          <ModalInput
             type="date"
             name="date"
             value={dateToString(values.date)}
             onChange={handleChange}
           />
-        </Label>
-        <Label>EquipmentToServices: {values.equipmentToServicesId}</Label>
+        </ModalLabel>
+        <ModalLabel>
+          Техника с услугой: {values.equipmentToServicesId}
+        </ModalLabel>
         <EquipmentToServicesForm
           equipmentToServicesId={values.equipmentToServicesId}
           onEquipmentToServicesIdChange={(id: number) =>
@@ -118,8 +101,8 @@ export const BookingModal = ({ booking, onClose }: BookingModalProps) => {
             })
           }
         />
-        <Label>
-          Status:
+        <ModalLabel>
+          Статус:
           <CategorySelectComponent
             categories={statuses}
             value={values.statusId}
@@ -127,9 +110,9 @@ export const BookingModal = ({ booking, onClose }: BookingModalProps) => {
               setValues({ ...values, statusId: +e.target.value });
             }}
           />
-        </Label>
-        <Button type="submit">Edit</Button>
-      </Form>
+        </ModalLabel>
+        <ModalButton type="submit">Обновить</ModalButton>
+      </ModalForm>
     </Modal>
   );
 };
