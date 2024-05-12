@@ -4,11 +4,11 @@ export const ADMIN_LINKS = [
     title: "Главная",
     link: "/admin",
   },
-  // {
-  //   id: 2,
-  //   title: "Пользователи",
-  //   link: "/admin/users",
-  // },
+  {
+    id: 2,
+    title: "Пользователи",
+    link: "/admin/users",
+  },
   {
     id: 3,
     title: "Услуги",
@@ -16,7 +16,7 @@ export const ADMIN_LINKS = [
   },
   {
     id: 4,
-    title: "Типы оборудования",
+    title: "Категории техники",
     link: "/admin/equipment-type",
   },
   {
@@ -31,7 +31,7 @@ export const ADMIN_LINKS = [
   },
   {
     id: 7,
-    title: "Бронирования",
+    title: "Заказы",
     link: "/admin/bookings",
   },
 ];
