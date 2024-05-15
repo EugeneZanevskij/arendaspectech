@@ -1,9 +1,14 @@
 import { IEquipmentTypeItem } from "../types";
+import LoaderImage from "../assets/loader_type.jpg";
+import MiniLoaderImage from "../assets/mini-loader_type.jpg";
+import MiniExcavator from "../assets/mini-excavator.jpg";
+import Samosval from "../assets/samosval.jpg";
 
 export const EQUIPMENTTYPES: IEquipmentTypeItem[] = [
   {
     id: 1,
     title: "Погрузчик",
+    image: LoaderImage,
     subtitle:
       "Задачами этого вида техники является проведение землеройных работ",
     description:
@@ -14,6 +19,7 @@ export const EQUIPMENTTYPES: IEquipmentTypeItem[] = [
   {
     id: 2,
     title: "Мини-погрузчик",
+    image: MiniLoaderImage,
     subtitle:
       "Задачами этого вида техники является проведение землеройных работ",
     relativePath: "mini-loader",
@@ -30,6 +36,7 @@ export const EQUIPMENTTYPES: IEquipmentTypeItem[] = [
   {
     id: 4,
     title: "Мини-экскаватор",
+    image: MiniExcavator,
     subtitle:
       "Задачами этого вида техники является проведение землеройных работ (планировка, копка, выравнивание)",
     relativePath: "mini-excavator",
@@ -38,6 +45,7 @@ export const EQUIPMENTTYPES: IEquipmentTypeItem[] = [
   {
     id: 5,
     title: "Самосвал",
+    image: Samosval,
     subtitle:
       "Задачами этого вида техники являются грузоперевозки, доставка сыпучих материалов: песка, щебня, гальки",
     relativePath: "samosval",
