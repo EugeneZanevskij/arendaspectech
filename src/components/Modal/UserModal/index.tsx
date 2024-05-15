@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { useNavigate } from "react-router-dom";
-// import { updateUser } from "../../slices/userSlice";
 import { Modal } from "../index";
 import { IUserData } from "../../../types";
 import axiosInstance from "../../../api/axiosInstance";
@@ -20,14 +17,11 @@ interface UserModalProps {
 
 export const UserModal = ({ user, onClose }: UserModalProps) => {
   const [values, setValues] = useState<IUserData>({ ...user });
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await axiosInstance.put(`/users/${user.id}`, values);
-      // navigate("/users");
     } catch (error) {
       console.error(error);
     }
@@ -42,7 +36,7 @@ export const UserModal = ({ user, onClose }: UserModalProps) => {
       <ModalForm onSubmit={handleSubmit}>
         <ModalHeading>Редактировать пользователя</ModalHeading>
         <ModalLabel htmlFor="username">
-          Username:
+          Имя пользователя:
           <ModalInput
             type="text"
             id="username"
