@@ -1,4 +1,5 @@
-import { IServicesItemExpanded } from "../../types";
+import { useEffect, useState } from "react";
+import { IEquipmentFullExtended, IServicesItemExpanded } from "../../types";
 import {
   ServiceInfoButton,
   ServiceInfoContainer,
@@ -8,11 +9,36 @@ import {
   ServiceInfoTopImage,
   ServiceInfoTopLeft,
 } from "./styled";
+import axiosInstance from "../../api/axiosInstance";
+import { EquipmentsItems } from "../EquipmentsItems";
 
 interface ServiceInfoProps {
   service: IServicesItemExpanded;
 }
 export const ServiceInfo = ({ service }: ServiceInfoProps) => {
+  const [filteredEquipments, setFilteredEquipments] = useState<
+    IEquipmentFullExtended[]
+  >([]);
+
+  const fetchFilteredEquipments = async () => {
+    try {
+      const res = await axiosInstance.get(`/admin/equipment`);
+      const results: IEquipmentFullExtended[] = res.data;
+      const filteredResults = results.filter((item: IEquipmentFullExtended) =>
+        item.services.some(
+          (itemService) => itemService.name === service.data.title,
+        ),
+      );
+      setFilteredEquipments(filteredResults);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchFilteredEquipments();
+  }, []);
+
   return (
     <ServiceInfoContainer>
       <ServiceInfoTop>
@@ -26,6 +52,11 @@ export const ServiceInfo = ({ service }: ServiceInfoProps) => {
           alt={service.data.title}
         />
       </ServiceInfoTop>
+      {filteredEquipments.length > 0 ? (
+        <EquipmentsItems equipments={filteredEquipments} />
+      ) : (
+        <p>Нет оборудования</p>
+      )}
     </ServiceInfoContainer>
   );
 };
