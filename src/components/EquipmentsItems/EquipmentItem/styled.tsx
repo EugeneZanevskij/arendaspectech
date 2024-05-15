@@ -5,22 +5,15 @@ export const EquipmentItemStyle = styled(Link)`
   max-width: 20rem;
   width: 100%;
   margin: 0 auto;
-  padding: 0.5rem 1rem 1rem;
+  padding: 1rem;
   border: 2px solid ${({ theme }) => theme.orange};
   border-radius: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1rem;
   text-decoration: none;
-`;
-
-export const EquipmentItemContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
 `;
 
 export const EquipmentItemImg = styled.img`
