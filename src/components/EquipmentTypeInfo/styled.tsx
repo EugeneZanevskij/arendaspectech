@@ -6,11 +6,21 @@ export const EquipmentTypeInfoContainer = styled.div`
   gap: 2rem;
 `;
 
+export const EquipmentTypeInfoTitle = styled.h3`
+  color: ${({ theme }) => theme.black};
+  text-align: center;
+  font-size: 2.5rem;
+`;
+
 export const EquipmentTypeInfoData = styled.div`
+  padding: 1rem 2rem;
   display: grid;
+  justify-content: center;
+  align-items: center;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  background-color: ${({ theme }) => theme.lightOrange};
+  gap: 2rem;
+  background-color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => theme.white};
   border-radius: 2rem;
 
   @media screen and (max-width: 768px) {
@@ -19,7 +29,17 @@ export const EquipmentTypeInfoData = styled.div`
   }
 `;
 
-export const EquipmentTypeInfoTitle = styled.h3`
-  color: ${({ theme }) => theme.black};
-  font-size: 2rem;
+export const EquipmentTypeInfoDataImage = styled.img`
+  width: 100%;
+  height: 100%;
+  max-width: 20rem;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 1rem;
+`;
+
+export const EquipmentTypeInfoDataParagraph = styled.p`
+  font-size: 1.5rem;
+  text-align: center;
+  grid-column: 2 / 3;
 `;
