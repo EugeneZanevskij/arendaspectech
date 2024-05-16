@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const UserDataWrapper = styled.div`
@@ -21,6 +22,17 @@ export const Text = styled.p<{ fontsize?: string }>`
 
 export const BoldText = styled.span`
   font-weight: 700;
+`;
+
+export const OrangeLink = styled(Link)`
+  padding: 0.75rem;
+  background-color: ${({ theme }) => theme.orange};
+  font-size: 1rem;
+  text-decoration: none;
+  color: ${({ theme }) => theme.white};
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
 `;
 
 export const LogoutButton = styled.button`

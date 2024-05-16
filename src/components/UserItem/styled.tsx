@@ -7,7 +7,7 @@ export const UserDataWrapper = styled.div`
   gap: 0.5rem;
   align-items: flex-start;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin: 1rem 0 2rem;
 `;
 
 export const Text = styled.p<{ fontsize?: string }>`
