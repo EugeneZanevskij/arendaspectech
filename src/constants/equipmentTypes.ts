@@ -1,8 +1,8 @@
 import { IEquipmentTypeItem } from "../types";
 import LoaderImage from "../assets/loader_type.jpg";
 import MiniLoaderImage from "../assets/mini-loader_type.jpg";
-import MiniExcavator from "../assets/mini-excavator.jpg";
-import Samosval from "../assets/samosval.jpg";
+import MiniExcavator from "../assets/mini-excavator_type.jpg";
+import Samosval from "../assets/samosval_type.jpg";
 
 export const EQUIPMENTTYPES: IEquipmentTypeItem[] = [
   {
