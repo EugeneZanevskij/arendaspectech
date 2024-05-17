@@ -69,7 +69,7 @@ const TableEquipment = ({ isAdmin, userId }: TableEquipmentProps) => {
   const bookingData = bookings.map((booking) => ({
     id: booking.id,
     username: users.find((user) => user.id === booking.userId)?.username || "Я",
-    price: booking.leaseDuration,
+    leaseDuration: `${booking.leaseDuration} ч.`,
     date: dateToString(booking.date),
     "Equipment/Service": booking.equipmentToServicesId,
     status: status.find((status) => status.id === booking.statusId)?.name,
