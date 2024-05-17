@@ -4,8 +4,9 @@ interface ITableProps {
   data: any[];
   handleDelete?: (id: number) => void;
   handleEdit: (id: number) => void;
+  isAdmin?: boolean;
 }
-const Table = ({ data, handleDelete, handleEdit }: ITableProps) => {
+const Table = ({ data, handleDelete, handleEdit, isAdmin }: ITableProps) => {
   const columns = Object.keys(data[0]);
   const toCapitalized = (str: string) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -18,7 +19,7 @@ const Table = ({ data, handleDelete, handleEdit }: ITableProps) => {
           {columns.map((column) => (
             <th key={column}>{toCapitalized(column)}</th>
           ))}
-          <th>Actions</th>
+          {isAdmin && <th>Actions</th>}
         </tr>
       </thead>
       <tbody>
@@ -27,16 +28,18 @@ const Table = ({ data, handleDelete, handleEdit }: ITableProps) => {
             {columns.map((column) => (
               <td key={`${item.id}-${column}`}>{item[column]}</td>
             ))}
-            <td>
-              {handleDelete && (
-                <DeleteButton onClick={() => handleDelete(item.id)}>
-                  Удалить
-                </DeleteButton>
-              )}
-              <EditButton onClick={() => handleEdit(item.id)}>
-                Изменить
-              </EditButton>
-            </td>
+            {isAdmin && (
+              <td>
+                {handleDelete && (
+                  <DeleteButton onClick={() => handleDelete(item.id)}>
+                    Удалить
+                  </DeleteButton>
+                )}
+                <EditButton onClick={() => handleEdit(item.id)}>
+                  Изменить
+                </EditButton>
+              </td>
+            )}
           </tr>
         ))}
       </tbody>
