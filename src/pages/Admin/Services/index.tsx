@@ -58,6 +58,7 @@ const AdminServices = () => {
           data={services}
           handleEdit={handleEdit}
           handleDelete={handleDelete}
+          isAdmin={true}
         />
       ) : (
         <p>Нет услуг</p>
