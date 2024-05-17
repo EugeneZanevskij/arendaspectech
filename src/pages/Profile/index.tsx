@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux-hooks";
 import { logout } from "../../slices/authSlice";
 import { getUser } from "../../slices/userSlice";
 import { UserItem } from "../../components/UserItem";
+import TableEquipment from "../../components/TableEquipment";
 
 const sectionHeading = {
   title: "Профиль",
@@ -41,11 +42,14 @@ export const Profile = () => {
               <OrangeLink to="/admin">Панель администратора</OrangeLink>
             )}
             <UserItem user={userProfileInfo} isAdmin={false} />
+            <TableEquipment
+              isAdmin={userProfileInfo.isAdmin}
+              userId={userProfileInfo.id}
+            />
             <LogoutButton onClick={handleLogout}>Выйти</LogoutButton>
           </>
         ) : (
           <>
-            <h1>Авторизация</h1>
             <OrangeLink to="/login">Авторизация</OrangeLink>
           </>
         )}
