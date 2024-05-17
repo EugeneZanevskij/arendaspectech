@@ -37,6 +37,7 @@ import { EquipmentsItems } from "./EquipmentsItems";
 import AdminPage from "../pages/AdminPage";
 import UserLayout from "../layouts/UserLayout";
 import AdminLayout from "../layouts/AdminLayout";
+import DefaultLayout from "../layouts/DefaultLayout";
 
 function App() {
   const [equipments, setEquipments] = useState<IEquipmentFullExtended[]>([]);
@@ -109,8 +110,10 @@ function App() {
             ))}
           </Route>
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route element={<DefaultLayout />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Route>
           <Route element={<UserLayout />}>
             <Route path="/booking-form" element={<BookingForm />} />
             <Route path="/profile" element={<Profile />} />
