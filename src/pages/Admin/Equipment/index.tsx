@@ -72,6 +72,7 @@ const AdminEquipment = () => {
           data={equipmentData}
           handleEdit={handleEdit}
           handleDelete={handleDelete}
+          isAdmin={true}
         />
       ) : (
         <p>Нет данных</p>
