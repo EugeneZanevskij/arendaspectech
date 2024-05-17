@@ -38,13 +38,3 @@ export const EditButton = styled.button`
   border-radius: 0.5rem;
   cursor: pointer;
 `;
-
-export const DeleteButton = styled.button`
-  padding: 0.75rem 1.25rem;
-  background-color: ${({ theme }) => theme.red};
-  font-size: 1rem;
-  color: ${({ theme }) => theme.white};
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-`;

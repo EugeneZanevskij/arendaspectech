@@ -1,7 +1,6 @@
 import {
   BackButton,
   BoldText,
-  DeleteButton,
   EditButton,
   Text,
   UserDataWrapper,
@@ -26,8 +25,6 @@ export const UserItem = ({ user, isAdmin }: UserItemProps) => {
     handleModalToggle();
   };
 
-  const handleDelete = () => {};
-
   return (
     <UserDataWrapper>
       {isModalOpen && <UserModal user={user} onClose={handleModalToggle} />}
@@ -38,7 +35,6 @@ export const UserItem = ({ user, isAdmin }: UserItemProps) => {
       <Text>E-mail: {user.email}</Text>
       <Text>Номер телефона: {user.phone}</Text>
       <EditButton onClick={handleEdit}>Изменить</EditButton>
-      <DeleteButton onClick={handleDelete}>Удалить</DeleteButton>
     </UserDataWrapper>
   );
 };
