@@ -26,7 +26,7 @@ const BookingForm: React.FC = () => {
     date: new Date(),
     leaseDuration: 1,
     comment: "",
-    statusId: 1,
+    statusId: 2,
   });
 
   const dateToString = (date: Date): string => {
@@ -47,6 +47,8 @@ const BookingForm: React.FC = () => {
       await axiosInstance.post("admin/bookings", {
         userId: userProfileInfo?.id,
         ...booking,
+        leaseDuration: +booking.leaseDuration,
+        date: new Date(booking.date),
       });
       navigate("/profile");
     }
