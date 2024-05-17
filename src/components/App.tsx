@@ -35,6 +35,8 @@ import { useEffect, useState } from "react";
 import { EquipmentPage } from "../pages/EquipmentPage";
 import { EquipmentsItems } from "./EquipmentsItems";
 import AdminPage from "../pages/AdminPage";
+import UserLayout from "../layouts/UserLayout";
+import AdminLayout from "../layouts/AdminLayout";
 
 function App() {
   const [equipments, setEquipments] = useState<IEquipmentFullExtended[]>([]);
@@ -84,11 +86,6 @@ function App() {
               />
             ))}
           </Route>
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/booking-form" element={<BookingForm />} />
           <Route path="/services" element={<Services />}>
             <Route index element={<ServicesItems services={SERVICES} />} />
             {SERVICES.map((service) => (
@@ -111,17 +108,26 @@ function App() {
               </Route>
             ))}
           </Route>
-          <Route path="/admin" element={<AdminPage />}>
-            <Route index />
-            <Route path="users" element={<Users />}>
-              <Route index element={<UserItems />} />
-              <Route path=":userId" element={<UserPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route element={<UserLayout />}>
+            <Route path="/booking-form" element={<BookingForm />} />
+            <Route path="/profile" element={<Profile />} />
+          </Route>
+          <Route element={<AdminLayout />}>
+            <Route path="/admin" element={<AdminPage />}>
+              <Route index />
+              <Route path="users" element={<Users />}>
+                <Route index element={<UserItems />} />
+                <Route path=":userId" element={<UserPage />} />
+              </Route>
+              <Route path="services" element={<AdminServices />} />
+              <Route path="equipment-type" element={<AdminEquipmentType />} />
+              <Route path="equipment" element={<AdminEquipment />} />
+              <Route path="status" element={<AdminStatus />} />
+              <Route path="bookings" element={<AdminBooking />} />
             </Route>
-            <Route path="services" element={<AdminServices />} />
-            <Route path="equipment-type" element={<AdminEquipmentType />} />
-            <Route path="equipment" element={<AdminEquipment />} />
-            <Route path="status" element={<AdminStatus />} />
-            <Route path="bookings" element={<AdminBooking />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
