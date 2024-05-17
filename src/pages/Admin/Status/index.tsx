@@ -46,7 +46,7 @@ const AdminStatus = () => {
       <h1>Статусы заказа</h1>
       <Button onClick={addService}>Добавить статус</Button>
       {statuses.length > 0 ? (
-        <Table data={statuses} handleEdit={handleEdit} />
+        <Table data={statuses} handleEdit={handleEdit} isAdmin={true} />
       ) : (
         <p>Нет статусов</p>
       )}
