@@ -2,6 +2,10 @@ import PerevozkaTekhniki from "../assets/perevozka_techniki.jpg";
 import SypuchieGruzy from "../assets/sypuchie_gruzy.jpg";
 import UborkaSneg from "../assets/uborka_snega.jpg";
 import ZemelnyeRaboty from "../assets/zemelnye_raboty.webp";
+import Vyemka from "../assets/vyemka.jpg";
+import Planirovka from "../assets/planirovka.webp";
+import Peremeshchenie from "../assets/peremeshchenie.jpg";
+import Blagoustrojstvo from "../assets/blagoustrojstvo.webp";
 import { IServicesItemExpanded } from "../types";
 
 export const SERVICES: IServicesItemExpanded[] = [
@@ -55,7 +59,7 @@ export const SERVICES: IServicesItemExpanded[] = [
         id: 2,
         data: {
           title: "Выемка грунта",
-          image: ZemelnyeRaboty,
+          image: Vyemka,
         },
         relativePath: "vyemka-grunta",
         absolutePath: "/services/zemlya-raboty/vyemka-grunta",
@@ -64,7 +68,7 @@ export const SERVICES: IServicesItemExpanded[] = [
         id: 3,
         data: {
           title: "Планировка участка",
-          image: ZemelnyeRaboty,
+          image: Planirovka,
         },
         relativePath: "planirovka-uchastka",
         absolutePath: "/services/zemlya-raboty/planirovka-uchastka",
@@ -73,7 +77,7 @@ export const SERVICES: IServicesItemExpanded[] = [
         id: 4,
         data: {
           title: "Перемещение и разработка грунта",
-          image: ZemelnyeRaboty,
+          image: Peremeshchenie,
         },
         relativePath: "peremeshchenie-grunta",
         absolutePath: "/services/zemlya-raboty/peremeshchenie-grunta",
@@ -82,7 +86,7 @@ export const SERVICES: IServicesItemExpanded[] = [
         id: 5,
         data: {
           title: "Благоустройство территорий",
-          image: ZemelnyeRaboty,
+          image: Blagoustrojstvo,
         },
         relativePath: "blagoustroystvo-territoriy",
         absolutePath: "/services/zemlya-raboty/blagoustroystvo-territoriy",
