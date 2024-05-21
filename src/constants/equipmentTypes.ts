@@ -3,6 +3,8 @@ import LoaderImage from "../assets/loader_type.jpg";
 import MiniLoaderImage from "../assets/mini-loader_type.jpg";
 import MiniExcavator from "../assets/mini-excavator_type.jpg";
 import Samosval from "../assets/samosval_type.jpg";
+import Excavator from "../assets/excavator_type.jpg";
+import Lowboy from "../assets/lowboy_type.jpg";
 
 export const EQUIPMENTTYPES: IEquipmentTypeItem[] = [
   {
@@ -28,6 +30,7 @@ export const EQUIPMENTTYPES: IEquipmentTypeItem[] = [
   {
     id: 3,
     title: "Экскаватор-погрузчик",
+    image: Excavator,
     subtitle:
       "Универсальная техника, сочетающая в себе  функции погрузчика и экскаватора. Землеройные работы и транспортировка грузов",
     relativePath: "excavator",
@@ -54,6 +57,7 @@ export const EQUIPMENTTYPES: IEquipmentTypeItem[] = [
   {
     id: 6,
     title: "Низкорамный трал",
+    image: Lowboy,
     subtitle:
       "Задачами этого вида техники является перевозка спецтехники, транспорта, эвакуатор",
     relativePath: "lowboy",
