@@ -34,7 +34,10 @@ export const login = createAsyncThunk("login", async (data: User) => {
   const response = await axiosInstance.post("/login", data);
   const resData = response.data;
 
-  localStorage.setItem("userInfo", JSON.stringify(resData));
+  localStorage.setItem("userInfo", JSON.stringify(resData.id, resData.email));
+  if (resData.token) {
+    localStorage.setItem("token", resData.token);
+  }
 
   return resData;
 });
@@ -50,6 +53,7 @@ export const logout = createAsyncThunk("logout", async () => {
   const resData = response.data;
 
   localStorage.removeItem("userInfo");
+  localStorage.removeItem("token");
 
   return resData;
 });
