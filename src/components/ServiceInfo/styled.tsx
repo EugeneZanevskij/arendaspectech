@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ServiceInfoContainer = styled.div`
@@ -42,7 +43,8 @@ export const ServiceInfoSubtitle = styled.p`
   font-size: 1.5rem;
 `;
 
-export const ServiceInfoButton = styled.div`
+export const ServiceInfoButton = styled(Link)`
+  text-decoration: none;
   background-color: ${({ theme }) => theme.white};
   color: ${({ theme }) => theme.orange};
   padding: 1rem 2rem;
