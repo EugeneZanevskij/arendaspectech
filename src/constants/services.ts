@@ -14,6 +14,7 @@ export const SERVICES: IServicesItemExpanded[] = [
     data: {
       title: "Доставка сыпучих грузов",
       image: SypuchieGruzy,
+      subtitle: "Доставим вам сыпучие грузы в любую точку Гродно",
     },
     relativePath: "sypuchie-gruzy",
     absolutePath: "/services/sypuchie-gruzy",
@@ -33,6 +34,7 @@ export const SERVICES: IServicesItemExpanded[] = [
     data: {
       title: "Уборка и вывоз снега",
       image: UborkaSneg,
+      subtitle: "Все виды уборки и вывоза снега",
     },
     relativePath: "uborka-sneg",
     absolutePath: "/services/uborka-sneg",
@@ -42,6 +44,7 @@ export const SERVICES: IServicesItemExpanded[] = [
     data: {
       title: "Земляные работы",
       image: ZemelnyeRaboty,
+      subtitle: "Все виды землеройных работ",
     },
     relativePath: "zemlya-raboty",
     absolutePath: "/services/zemlya-raboty",

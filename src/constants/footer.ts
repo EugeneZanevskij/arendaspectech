@@ -8,7 +8,7 @@ export const FOOTER_DATA = {
   footerData: [
     {
       icon: MdPlace,
-      title: "г. Гродно, ул. Поповича, д. 138",
+      title: "д. Добровольщина, ул. Новая, д. 4",
     },
     {
       icon: FaPhone,
