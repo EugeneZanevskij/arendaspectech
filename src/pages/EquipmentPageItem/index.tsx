@@ -27,7 +27,7 @@ export const EquipmentPageItem = ({ equipment }: EquipmentPageProps) => {
   );
   const fetchEquipmentType = async () => {
     axiosInstance
-      .get(`/admin/equipment-type/${equipment.id}`)
+      .get(`/admin/equipment-type/${equipment.equipmentTypeId}`)
       .then((res) => {
         setCategory(
           EQUIPMENTTYPES.find((eq) => eq.title === res.data.name) ||
