@@ -27,10 +27,29 @@ export const Footer = () => {
       <FooterWrapper>
         <FooterContainer>
           <FooterColumn>
-            <FooterLogo to="/">{logo}</FooterLogo>
+            <FooterLogo
+              onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }}
+              to="/"
+            >
+              {logo}
+            </FooterLogo>
             <FooterColumnNavLinks>
               {NAV.map((nav) => (
-                <FooterColumnNavLink key={nav.name} to={nav.path}>
+                <FooterColumnNavLink
+                  key={nav.name}
+                  to={nav.path}
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth",
+                    });
+                  }}
+                >
                   {nav.name}
                 </FooterColumnNavLink>
               ))}

@@ -26,7 +26,17 @@ export const UserItems: React.FC = () => {
           <UserCardItem>{user.username}</UserCardItem>
           <UserCardItem>{user.email}</UserCardItem>
           <UserCardItem>{user.phone}</UserCardItem>
-          <UserCardLink to={`/admin/users/${user.id}`}>Подробнее</UserCardLink>
+          <UserCardLink
+            to={`/admin/users/${user.id}`}
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
+            Подробнее
+          </UserCardLink>
         </UserCard>
       ))}
     </Container>

@@ -39,7 +39,17 @@ export const Profile = () => {
         {userProfileInfo ? (
           <>
             {userProfileInfo.isAdmin && (
-              <OrangeLink to="/admin">Панель администратора</OrangeLink>
+              <OrangeLink
+                to="/admin"
+                onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                  });
+                }}
+              >
+                Панель администратора
+              </OrangeLink>
             )}
             <UserItem user={userProfileInfo} isAdmin={false} />
             <TableEquipment

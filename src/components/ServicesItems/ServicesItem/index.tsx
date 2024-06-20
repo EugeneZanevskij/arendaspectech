@@ -11,7 +11,15 @@ interface ServicesItemProps {
 
 export const ServicesItem = ({ service }: ServicesItemProps) => {
   return (
-    <ServicesItemStyle to={service.absolutePath}>
+    <ServicesItemStyle
+      onClick={() => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }}
+      to={service.absolutePath}
+    >
       <ServicesItemImg src={service.data.image} alt={service.data.title} />
       <ServicesItemTitle>{service.data.title}</ServicesItemTitle>
     </ServicesItemStyle>

@@ -13,7 +13,15 @@ interface EquipmentItemProps {
 export const EquipmentItem = ({ equipment }: EquipmentItemProps) => {
   const absolutePath = `/equipment/${equipment.relativePath}`;
   return (
-    <EquipmentItemStyle to={absolutePath}>
+    <EquipmentItemStyle
+      onClick={() => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }}
+      to={absolutePath}
+    >
       <EquipmentItemImg src={equipment.imagePath} alt={equipment.name} />
       <EquipmentItemTitle>{equipment.name}</EquipmentItemTitle>
       <EquipmentItemSubtitle>{equipment.price} руб.</EquipmentItemSubtitle>

@@ -50,7 +50,17 @@ export const EquipmentPageItem = ({ equipment }: EquipmentPageProps) => {
       <PriceBlock>
         <PriceBlockTitle>Стоимость аренды</PriceBlockTitle>
         <PriceBlockSubtitle>{equipment.price} рублей/час</PriceBlockSubtitle>
-        <PriceBlockLink to="/booking-form">Забронировать</PriceBlockLink>
+        <PriceBlockLink
+          to="/booking-form"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          Забронировать
+        </PriceBlockLink>
       </PriceBlock>
 
       {category && (

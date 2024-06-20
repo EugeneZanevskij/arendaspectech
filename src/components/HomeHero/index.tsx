@@ -40,7 +40,17 @@ export const HomeHero = () => {
               </ContactLink>
             </HomeHeroBlock>
           </HomeHeroBlockText>
-          <HomeHeroButton to="/booking-form">Сделать заказ</HomeHeroButton>
+          <HomeHeroButton
+            to="/booking-form"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
+            Сделать заказ
+          </HomeHeroButton>
         </HomeHeroBlock>
       </HomeHeroContainer>
     </HomeHeroSection>

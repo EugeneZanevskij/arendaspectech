@@ -42,7 +42,16 @@ const AdminPage = () => {
     <AdminContainer>
       <Nav>
         {ADMIN_LINKS.map((link) => (
-          <NavLink key={link.id} to={link.link}>
+          <NavLink
+            key={link.id}
+            to={link.link}
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
             {link.title}
           </NavLink>
         ))}

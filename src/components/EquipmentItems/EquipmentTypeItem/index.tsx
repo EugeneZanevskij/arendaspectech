@@ -16,7 +16,15 @@ export const EquipmentTypeItem = ({
   equipmentType,
 }: EquipmentTypeItemProps) => {
   return (
-    <EquipmentTypeItemStyle to={equipmentType.absolutePath}>
+    <EquipmentTypeItemStyle
+      onClick={() => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }}
+      to={equipmentType.absolutePath}
+    >
       <EquipmentTypeItemContainer>
         <EquipmentTypeItemImg
           src={equipmentType.image}

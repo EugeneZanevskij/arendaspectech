@@ -45,7 +45,17 @@ export const ServiceInfo = ({ service }: ServiceInfoProps) => {
         <ServiceInfoTopLeft>
           <ServiceInfoTitle>{service.data.title}</ServiceInfoTitle>
           <ServiceInfoSubtitle>{service.data.subtitle}</ServiceInfoSubtitle>
-          <ServiceInfoButton to="/booking-form">Заказать</ServiceInfoButton>
+          <ServiceInfoButton
+            to="/booking-form"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
+            Заказать
+          </ServiceInfoButton>
         </ServiceInfoTopLeft>
         <ServiceInfoTopImage
           src={service.data.image}

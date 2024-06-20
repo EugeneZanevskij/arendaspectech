@@ -28,7 +28,19 @@ export const UserItem = ({ user, isAdmin }: UserItemProps) => {
   return (
     <UserDataWrapper>
       {isModalOpen && <UserModal user={user} onClose={handleModalToggle} />}
-      {isAdmin && <BackButton to="/admin/users">Назад</BackButton>}
+      {isAdmin && (
+        <BackButton
+          to="/admin/users"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          Назад
+        </BackButton>
+      )}
       <Text fontsize="1.5rem">
         <BoldText>Имя: {user.username}</BoldText>
       </Text>

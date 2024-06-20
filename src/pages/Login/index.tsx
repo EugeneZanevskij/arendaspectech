@@ -52,7 +52,17 @@ export const Login = () => {
           onChange={(e) => setValues({ ...values, password: e.target.value })}
         />
         <SubmitButton type="submit">Войти</SubmitButton>
-        <RegisterButton to="/register">Регистрация</RegisterButton>
+        <RegisterButton
+          to="/register"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          Регистрация
+        </RegisterButton>
       </LoginForm>
     </LoginContainer>
   );
